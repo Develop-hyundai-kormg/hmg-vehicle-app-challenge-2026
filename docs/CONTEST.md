@@ -5,7 +5,7 @@
 ## 참가와 평가
 
 - 주제는 차량 안에서 새로운 고객 경험을 제공하는 앱이다. [공모전 개요](https://appdevchallenge.auto-hmg.io/guide/overview)
-- 개인 또는 **최대 5인 팀**으로 참가한다. 참가 대상은 대학(원)생·일반인·스타트업이며, 시상 부문은 대학생/일반이다. 우리 팀은 **4인 구성 예정**이다. 현재 확인된 구성은 대학생 2명과 대학 졸업 후 일반인 1명이며, 네 번째 팀원은 초대 전이라 학적·역할이 미확인이다. 공개 규정에 혼합팀의 부문 결정 방식이 없어 **4인 구성을 확정한 뒤 운영사무국의 서면 답변이 필요**하다. 답을 받기 전 임의로 부문을 확정하지 않는다. [참가 규정](https://appdevchallenge.auto-hmg.io/guide/rules) · [FAQ](https://appdevchallenge.auto-hmg.io/faq) · [문의 안내](https://appdevchallenge.auto-hmg.io/guide/help)
+- 개인 또는 **최대 5인 팀**으로 참가한다. 참가 대상은 대학(원)생·일반인·스타트업이며, 시상 부문은 대학생/일반이다. 우리 팀은 **4인 구성**으로 준비한다. 대학생과 대학 졸업 후 일반인이 함께하며, 추가 팀원은 초대 예정이라 학적·역할이 미확인이다. 공개 규정에 혼합팀의 부문 결정 방식이 없어 **4인 구성을 확정한 뒤 운영사무국의 서면 답변이 필요**하다. 답을 받기 전 임의로 부문을 확정하지 않는다. [참가 규정](https://appdevchallenge.auto-hmg.io/guide/rules) · [FAQ](https://appdevchallenge.auto-hmg.io/faq) · [문의 안내](https://appdevchallenge.auto-hmg.io/guide/help)
 - 1차 필수 평가는 **차량특화성**, **창의성**, **Pleos SDK/API 활용성**, **사업성**이다. 배점은 비공개다. 사업성에는 타깃, 사용자 확보, 예상 MAU, 재사용률, 확대 가능성이 포함된다. 자체 점수표나 합격 확률을 공식 배점처럼 제시하지 않는다. [심사·시상](https://appdevchallenge.auto-hmg.io/guide/judging-awards)
 - 순수 창작물이어야 한다. 표절이나 기수상작, 허위 기재는 제외·취소 사유다. 각 팀원의 과거 공개/제출 이력과 외부 자료의 사용권을 확인한다. [출품 유의사항](https://appdevchallenge.auto-hmg.io/notice/c0a1a000-2026-4923-8000-000000000006)
 

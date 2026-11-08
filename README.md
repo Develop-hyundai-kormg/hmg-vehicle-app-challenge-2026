@@ -11,6 +11,13 @@
 3. [독립 검토 요청](docs/REVIEW_REQUEST.md)을 본인 AI에 전달하고 다른 팀원의 답을 보기 전에 의견을 남깁니다.
 4. SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다. 아이디어를 확정하기 전에는 구현 가능성을 사실로 쓰지 않습니다.
 
+로컬에서 문서나 코드를 작업할 때는 조직 권한이 있는 계정으로 저장소를 복제합니다. **현재는 Android 앱 프로젝트가 없어 빌드 명령이 없습니다.**
+
+```bash
+git clone https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026.git
+cd hmg-vehicle-app-challenge-2026
+```
+
 ## 현재 판단 한눈에 보기
 
 | 후보 | 현재 상태 | 먼저 확인할 것 |

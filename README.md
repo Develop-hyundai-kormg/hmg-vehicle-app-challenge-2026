@@ -22,6 +22,16 @@
 
 현재 **1차 주력안과 합격 가능성은 확정하지 않았습니다.** 기존 서비스의 반례와 Pleos 미검증 조건을 확인한 결과, 앞서 추천했던 체크리스트안을 주력안에서 조건부 후보로 내렸습니다. [판단 근거](docs/PRODUCT_VISION.md)
 
+## 1차 전 핵심 Issue
+
+| Issue | 확인할 결과 |
+|---|---|
+| [#1 팀원 AI 독립 검토](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/1) | 서로의 답을 보기 전 반례와 새 후보를 받아 주제 판단 |
+| [#2 Pleos 기술 검증](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/2) | SDK 접근, 앱 콜백, 무목적지 카메라·자동 동작의 실제 결과 |
+| [#3 혼합팀 참가 부문](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/3) | 운영사무국의 서면 답변 |
+| [#4 기존 서비스·사용자 가치](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/4) | 대상 운전자의 반복 문제와 기존 앱의 남은 빈틈 |
+| [#5 1차 제출물](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/5) | 공식 기획서, 선택 영상·소스/APK의 검증된 범위 |
+
 ## 핵심 일정
 
 | 날짜(KST) | 단계 | 팀이 준비할 것 |

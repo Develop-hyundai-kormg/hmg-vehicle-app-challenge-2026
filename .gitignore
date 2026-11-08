@@ -1,0 +1,26 @@
+# Android / Gradle local state and build outputs
+.gradle/
+.idea/
+**/build/
+local.properties
+*.iml
+*.log
+
+# Credentials, signing keys, local environment
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+
+# Personal submission forms and raw sensitive research
+submission/private/
+research/private/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+

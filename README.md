@@ -2,14 +2,14 @@
 
 4인 팀의 아이디어 검증, Pleos 기술 확인, 1차 제출물 준비를 위한 작업 저장소입니다. 추가 팀원 초대와 역할 확인은 진행 예정입니다.
 
-> **현재 상태 · 2026-11-09 소비자 탐색:** **1차 주력 추천 후보 없음.** 병원안은 기술 실험 사례·예비 기획으로 내렸다. 일반 자가용 운전자의 최근 실제 문제를 찾는 중이다. 팀 자체 제품 앱 코드/APK, 실차·사용자 검증, 접수는 없다. Windows 데스크탑 Pleos AVD에서 공식 SDK 샘플과 차량 신호 진단은 실행했다. [일반 운전자 방향 탐색](docs/CONSUMER_DISCOVERY_2026-11-09.md)
+> **현재 상태 · 2026-11-09 1차 작업 주제 선정:** **〈다음 운전자〉 가족 자가용 인계**를 팀 검토용 단일 주제로 잡았다. 최종 출품 확정이나 사용자 가치 입증은 아니다. [주제·탈락 조건](docs/FIRST_ROUND_DIRECTION_2026-11-09.md) · [공식 양식 1~6번 초안](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md) · [팀원 독립 검토 요청](docs/TEAM_REVIEW_NEXT_DRIVER.md). 팀 자체 제품 앱 코드/APK, 실차·사용자 검증, 접수는 없다.
 
 ## 처음 합류했다면
 
 1. [공모전 규칙과 제출물](docs/CONTEST.md)을 읽고 **11월 15일 23:59 KST** 1차 마감과 **12월 3~4일** 실제 앱 시연 조건을 확인합니다.
-2. [제품 목표와 후보](docs/PRODUCT_VISION.md)를 읽습니다. 사용자가 원하는 카메라 알림과 주행 후 체크리스트는 구분해서 평가합니다.
-3. [최신 방향 재판단](docs/DIRECTION_REASSESSMENT_2026-11-09.md)과 [이전 독립 재검증](docs/INDEPENDENT_REVIEW_2026-11-09.md)을 읽고, 팀원 보고서 3건의 서로 다른 추천과 실제 SDK 실행 결과를 구분합니다.
-4. [운전자 인터뷰 질문지](docs/DRIVER_INTERVIEW_2026-11-09.md)로 최근 사례와 기존 해결법을 기록합니다. 팀원 AI에는 [2차 독립 검토 요청](docs/REVIEW_ROUND_2_2026-11-09.md)을 보내고, SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다.
+2. [작업 주제와 탈락 조건](docs/FIRST_ROUND_DIRECTION_2026-11-09.md), [제출 문안 초안](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md)을 읽고 [팀원 독립 검토 요청](docs/TEAM_REVIEW_NEXT_DRIVER.md)에 각자 답합니다.
+3. [제품 목표와 후보](docs/PRODUCT_VISION.md), [이전 방향 재판단](docs/DIRECTION_REASSESSMENT_2026-11-09.md)과 [독립 재검증](docs/INDEPENDENT_REVIEW_2026-11-09.md)으로 선정 이전 판단과 SDK 실행 결과를 확인합니다.
+4. [운전자 인터뷰 질문지](docs/DRIVER_INTERVIEW_2026-11-09.md)로 최근 교대 사례와 기존 해결법을 기록하고, SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다.
 
 로컬에서 문서나 코드를 작업할 때는 조직 권한이 있는 계정으로 저장소를 복제합니다. **현재 제품 앱 프로젝트는 없습니다.** `experiments/`는 차량 신호·기어·주행 UI 제한 진단용입니다.
 
@@ -22,6 +22,7 @@ cd hmg-vehicle-app-challenge-2026
 
 | 후보 | 현재 상태 | 먼저 확인할 것 |
 |---|---|---|
+| **가족 자가용 인계 〈다음 운전자〉** | **1차 팀 검토용 단일 작업안. 가치·차별성 미검증** | 최근 실제 교대 문제, 카카오톡·마이현대 대비 이득, 수동 재방문, SDK 수치의 의사결정 기여 |
 | 목적지 없는 약 250m 카메라 알림·순정 내비 중복 억제 | 원래 제품 목표, **1차 주력 보류** | 무경로 이벤트·자동 시작·중복 억제·주행 음성 정책의 실제 증거 |
 | 주행 후 관찰 체크리스트·맥락 정정 | **1차 주력 보류** | 기존 분석 앱보다 반복 사용 이유와 실제 사건 관측 |
 | 병원 환자 하차→보호자 주차→픽업 | **주력 추천 해제.** 경유지 미리보기 기술 실험·예비 기획 | 반복 사용자 가치, 일반 지도 대비 차이, 병원별 데이터 확대 비용 |
@@ -29,9 +30,9 @@ cd hmg-vehicle-app-challenge-2026
 | 공용차 연료 인수인계 〈다음 차례〉 | **조건부 탐색.** 현재 에뮬레이터에서 Fuel Percent 미지원 | 지원 실차·공유 프로필·교대 현장의 직접 증거와 기존 관리 앱 대비 이점 |
 | EV 충전 확인 등 기타 후보 | 예비 아이디어 | 실제 충전 상태 신호와 기존 대안 대비 사용자 가치 |
 | 정차 중 초보 운전자 실차 조작 연습 | **주력 보류.** 국내 경험담 1건, SDK 정적 조회만 확인. Pleos 기본 차량 제어 화면과 겹침 | 최근 실제 사례 3건 이상, 순정 설명서·음성·기본 제어 대비 이득, 차량값 변화 감지 |
-| 비·김서림 준비 / 가족 차량 인계 / 주차장 진입 기억 | 낮은 우선순위 | 반복 문제, 기존 기능의 빈틈, SDK 핵심 신호 |
+| 비·김서림 준비 / 주차장 진입 기억 | 낮은 우선순위 | 반복 문제, 기존 기능의 빈틈, SDK 핵심 신호 |
 
-공식 샘플에서 Vehicle SDK 조회와 NaviHelper 경유지 경로 미리보기가 실행됐지만, Virtual Console의 차량값 변경은 503 오류로 실패했습니다. ADB 차량값 주입도 이 이미지의 `user` 빌드 정책으로 거절됐습니다. 창문·와이퍼 쓰기 성공 콜백 뒤 현재값은 바뀌지 않았고, 타이어·경고 정보는 권한 오류가 났습니다. **어느 후보도 실제 고객 문제, 차량 고유 이점, 12월 시연 경로를 함께 입증하지 못했습니다.** [새 진단 결과](experiments/consumer-signal-probe/README.md)
+공식 샘플에서 Vehicle SDK 정적 조회와 NaviHelper 경유지 경로 미리보기가 실행됐지만, Virtual Console의 차량값 변경은 503 오류로 실패했습니다. ADB 차량값 주입도 이 이미지의 `user` 빌드 정책으로 거절됐습니다. 창문·와이퍼 쓰기 성공 콜백 뒤 현재값은 바뀌지 않았고, 타이어·경고 정보는 권한 오류가 났습니다. **〈다음 운전자〉는 구현 경로를 그릴 수 있으나 실제 고객 문제·차량 고유 이점·재사용을 아직 입증하지 못했습니다.** [진단 결과](experiments/consumer-signal-probe/README.md)
 
 ## 1차 전 핵심 Issue
 
@@ -64,9 +65,12 @@ cd hmg-vehicle-app-challenge-2026
 | [AAOS 진단 앱 소스](experiments/aaos-gear-probe/README.md) | 데스크탑에서 실행한 기어·UI 제한·직접 누적거리 권한 시험의 재현 코드 |
 | [차량 신호 진단 소스](experiments/consumer-signal-probe/README.md) | 데스크탑 Pleos AVD에서 일반 운전자 후보 관련 조회·쓰기 재조회 결과 |
 | [CONSUMER_DISCOVERY_2026-11-09.md](docs/CONSUMER_DISCOVERY_2026-11-09.md) | 국내 운전자 경험담, 기존 기능 반례, 새 후보와 15일까지의 결정 관문 |
+| [FIRST_ROUND_DIRECTION_2026-11-09.md](docs/FIRST_ROUND_DIRECTION_2026-11-09.md) | **현재 단일 작업 주제**, 1차 장면과 가장 빠른 탈락 시험 |
+| [SUBMISSION_DRAFT_NEXT_DRIVER.md](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md) | 공식 접수양식 작품 소개 1~6번의 검토 전 초안 |
+| [TEAM_REVIEW_NEXT_DRIVER.md](docs/TEAM_REVIEW_NEXT_DRIVER.md) | 팀원에게 보낼 주제 전용 독립 검토 프롬프트 |
 | [DRIVER_INTERVIEW_2026-11-09.md](docs/DRIVER_INTERVIEW_2026-11-09.md) | 일반 자가용 운전자 10~15분 인터뷰·익명 기록 양식 |
 | [INDEPENDENT_REVIEW_2026-11-09.md](docs/INDEPENDENT_REVIEW_2026-11-09.md) | 팀원 보고서 3건 재평가, 데스크탑 실행 증거, 후보 결정 관문 |
-| [DIRECTION_REASSESSMENT_2026-11-09.md](docs/DIRECTION_REASSESSMENT_2026-11-09.md) | 병원안 주력 추천 해제와 후보별 새 결정 관문. **최신 판단** |
+| [DIRECTION_REASSESSMENT_2026-11-09.md](docs/DIRECTION_REASSESSMENT_2026-11-09.md) | 병원안 주력 추천 해제와 후보별 결정 관문의 당시 판단 |
 | [SUBMISSION_PLAN.md](docs/SUBMISSION_PLAN.md) | 공식 기획서 작성·영상·GitHub/APK 체크리스트 |
 | [SUBMISSION_DRAFT_C.md](docs/SUBMISSION_DRAFT_C.md) | 주력 추천에서 내린 병원안의 예비 문안. 검증으로 복귀할 때만 사용 |
 | [REVIEW_REQUEST.md](docs/REVIEW_REQUEST.md) | 팀원 AI 독립 검토 프롬프트와 답변 형식 |

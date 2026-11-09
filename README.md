@@ -2,13 +2,13 @@
 
 4인 팀의 아이디어 검증, Pleos 기술 확인, 1차 제출물 준비를 위한 작업 저장소입니다. 추가 팀원 초대와 역할 확인은 진행 예정입니다.
 
-> **현재 상태 · 2026-11-09:** 주제 미확정 · **조건부 1순위는 병원 환자 하차→보호자 주차→픽업** · 팀 자체 앱 코드/APK 없음 · 데스크탑 Pleos 에뮬레이터에서 공식 SDK 샘플과 별도 AAOS 검증 앱 실행 · 실차/병원 현장/사용자 검증 없음 · 접수 전. [독립 재검증 전체 결과](docs/INDEPENDENT_REVIEW_2026-11-09.md)
+> **현재 상태 · 2026-11-09 재판단:** **1차 주력 추천 후보 없음.** 병원안은 기술 실험 사례·예비 기획으로 내렸다. 팀 자체 앱 코드/APK, 실차·현장·사용자 검증, 접수는 없다. 데스크탑에서 공식 SDK 샘플과 AAOS 진단 앱은 실행했다. [최신 방향 재판단](docs/DIRECTION_REASSESSMENT_2026-11-09.md)
 
 ## 처음 합류했다면
 
 1. [공모전 규칙과 제출물](docs/CONTEST.md)을 읽고 **11월 15일 23:59 KST** 1차 마감과 **12월 3~4일** 실제 앱 시연 조건을 확인합니다.
 2. [제품 목표와 후보](docs/PRODUCT_VISION.md)를 읽습니다. 사용자가 원하는 카메라 알림과 주행 후 체크리스트는 구분해서 평가합니다.
-3. [2026-11-09 독립 재검증](docs/INDEPENDENT_REVIEW_2026-11-09.md)을 읽고, 팀원 보고서 3건의 서로 다른 추천과 실제 SDK 실행 결과를 구분합니다.
+3. [최신 방향 재판단](docs/DIRECTION_REASSESSMENT_2026-11-09.md)과 [이전 독립 재검증](docs/INDEPENDENT_REVIEW_2026-11-09.md)을 읽고, 팀원 보고서 3건의 서로 다른 추천과 실제 SDK 실행 결과를 구분합니다.
 4. 추가 반례가 있으면 [독립 검토 요청](docs/REVIEW_REQUEST.md)의 형식으로 남깁니다. SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다.
 
 로컬에서 문서나 코드를 작업할 때는 조직 권한이 있는 계정으로 저장소를 복제합니다. **현재 제품 앱 프로젝트는 없습니다.** `experiments/`의 Android 프로젝트는 기어·주행 UI 제한 진단용입니다.
@@ -24,12 +24,12 @@ cd hmg-vehicle-app-challenge-2026
 |---|---|---|
 | 목적지 없는 약 250m 카메라 알림·순정 내비 중복 억제 | 원래 제품 목표, **1차 주력 보류** | 무경로 이벤트·자동 시작·중복 억제·주행 음성 정책의 실제 증거 |
 | 주행 후 관찰 체크리스트·맥락 정정 | **1차 주력 보류** | 기존 분석 앱보다 반복 사용 이유와 실제 사건 관측 |
-| 병원 환자 하차→보호자 주차→픽업 | **조건부 1순위**. 경유지 경로 미리보기 실행 확인 | 병원 1곳의 합법 승하차·출입구·주차·픽업 현장 확인, 실제 보호자 의견, 자체 앱 시연 |
-| 누적거리 기반 업무용 운행기록 | 읽기 실행 확인, **기존 서비스와 겹침** | Pleos Fleet·카택스가 남긴 구체적 빈틈과 자동 분할 증거 |
-| 공용차 연료 인수인계 〈다음 차례〉 | **현재 에뮬레이터에서 Fuel Percent 미지원** | 지원 실차·공유 프로필·교대 현장의 직접 증거 |
+| 병원 환자 하차→보호자 주차→픽업 | **주력 추천 해제.** 경유지 미리보기 기술 실험·예비 기획 | 반복 사용자 가치, 일반 지도 대비 차이, 병원별 데이터 확대 비용 |
+| 누적거리 기반 업무용 운행기록 | **검증 트랙.** 읽기 실행 확인, 기존 서비스와 겹침 | Pleos Fleet·카택스 사용자의 실제 미해결 비용과 자동 구간 분할 증거 |
+| 공용차 연료 인수인계 〈다음 차례〉 | **조건부 탐색.** 현재 에뮬레이터에서 Fuel Percent 미지원 | 지원 실차·공유 프로필·교대 현장의 직접 증거와 기존 관리 앱 대비 이점 |
 | EV 충전 확인 등 기타 후보 | 예비 아이디어 | 실제 충전 상태 신호와 기존 대안 대비 사용자 가치 |
 
-현재 **출품 주제와 합격 가능성은 확정하지 않았습니다.** 공식 샘플에서 Vehicle SDK 조회와 NaviHelper 경유지 경로 미리보기가 실행됐지만, Virtual Console의 차량값 변경은 503 오류로 실패했습니다. C의 현장·사용자 근거가 확보되기 전까지 구현 가능성과 고객 가치를 합쳐서 성공으로 세지 않습니다. [상세 판단](docs/INDEPENDENT_REVIEW_2026-11-09.md)
+공식 샘플에서 Vehicle SDK 조회와 NaviHelper 경유지 경로 미리보기가 실행됐지만, Virtual Console의 차량값 변경은 503 오류로 실패했습니다. ADB 차량값 주입도 이 이미지의 `user` 빌드 정책으로 거절됐습니다. **어느 후보도 실제 고객 문제, 차량 고유 이점, 12월 시연 경로를 함께 입증하지 못했습니다.** [수정 근거](docs/DIRECTION_REASSESSMENT_2026-11-09.md)
 
 ## 1차 전 핵심 Issue
 
@@ -61,8 +61,9 @@ cd hmg-vehicle-app-challenge-2026
 | [TECHNICAL_VALIDATION.md](docs/TECHNICAL_VALIDATION.md) | SDK/API 접근, 실험 순서, 미확인 조건 |
 | [AAOS 진단 앱 소스](experiments/aaos-gear-probe/README.md) | 데스크탑에서 실행한 기어·UI 제한·직접 누적거리 권한 시험의 재현 코드 |
 | [INDEPENDENT_REVIEW_2026-11-09.md](docs/INDEPENDENT_REVIEW_2026-11-09.md) | 팀원 보고서 3건 재평가, 데스크탑 실행 증거, 후보 결정 관문 |
+| [DIRECTION_REASSESSMENT_2026-11-09.md](docs/DIRECTION_REASSESSMENT_2026-11-09.md) | 병원안 주력 추천 해제와 후보별 새 결정 관문. **최신 판단** |
 | [SUBMISSION_PLAN.md](docs/SUBMISSION_PLAN.md) | 공식 기획서 작성·영상·GitHub/APK 체크리스트 |
-| [SUBMISSION_DRAFT_C.md](docs/SUBMISSION_DRAFT_C.md) | 병원안이 현장·사용자 검증을 통과할 경우 공식 양식 1~6번에 옮길 팀 검토용 문안 |
+| [SUBMISSION_DRAFT_C.md](docs/SUBMISSION_DRAFT_C.md) | 주력 추천에서 내린 병원안의 예비 문안. 검증으로 복귀할 때만 사용 |
 | [REVIEW_REQUEST.md](docs/REVIEW_REQUEST.md) | 팀원 AI 독립 검토 프롬프트와 답변 형식 |
 | [DECISIONS.md](docs/DECISIONS.md) | 판단 변경과 이유의 기록 |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Issue, 브랜치, PR, 자료 취급 규칙 |

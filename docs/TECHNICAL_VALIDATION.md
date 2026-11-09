@@ -11,6 +11,8 @@
 | **구분 필요** | Pleos SDK 누적거리 읽기는 성공했지만 일반 AAOS 직접 읽기는 거절됐다. EV 충전 스위치 setEvChargeSwitch(true)의 완료 응답 뒤 재조회는 false라 실제 충전 시작 증거가 아니다. |
 | **미확인** | 앱의 차량값 변화 콜백, 무목적지 카메라 이벤트·250m·순정 중복 억제, 재시동 자동 시작, 실차 권한, 병원 POI 정확도와 전체 경로. |
 
+**추가 시험(2026-11-09):** Pleos 전용 AVD의 `ro.build.type=user`를 확인했다. AAOS 공식 문서의 `dumpsys activity service com.android.car inject-vhal-event` 실행 뒤에도 기어 조회는 P(4)였고, `adb shell cmd car_service inject-vhal-event 0x11400400 8`은 `SecurityException: ... requires non-user build`로 거절됐다. 이는 Virtual Console 503과 별도인 제한이다. 현재 확보한 경로로 기어/거리 변화 콜백을 시연할 수 있다고 쓰지 않는다. 다른 지원 테스트 경로까지 불가능하다고 일반화하지 않는다. [최신 실험·후보 판단](DIRECTION_REASSESSMENT_2026-11-09.md), [Android 공식 가상 주행 시험](https://source.android.com/docs/automotive/driver_distraction/consume)
+
 공식 Vehicle 샘플은 공개 빌드가 처음 실패했다. 샘플의 Vehicle 2.3.1 고정 의존성을 **검증용 복제본에서만** 공개 저장소에 있는 2.3.2로 바꾸자 빌드됐다. 이는 원본 샘플의 무수정 빌드 성공으로 보고하지 않는다.
 
 AAOS 직접 API 조회는 [진단 앱 소스와 재현 절차](../experiments/aaos-gear-probe/README.md)를 남겼다. `GEAR_SELECTION=4`(P)와 현재 제한 해제 상태를 읽었지만, 직접 `PERF_ODOMETER`는 `CAR_MILEAGE` 미부여로 거절됐다. 제품 앱은 이 진단 코드의 성공 범위부터 다시 확인해야 한다.

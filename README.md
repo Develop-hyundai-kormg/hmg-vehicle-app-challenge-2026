@@ -2,16 +2,16 @@
 
 4인 팀의 아이디어 검증, Pleos 기술 확인, 1차 제출물 준비를 위한 작업 저장소입니다. 추가 팀원 초대와 역할 확인은 진행 예정입니다.
 
-> **현재 상태 · 2026-11-09 재판단:** **1차 주력 추천 후보 없음.** 병원안은 기술 실험 사례·예비 기획으로 내렸다. 팀 자체 앱 코드/APK, 실차·현장·사용자 검증, 접수는 없다. 데스크탑에서 공식 SDK 샘플과 AAOS 진단 앱은 실행했다. [최신 방향 재판단](docs/DIRECTION_REASSESSMENT_2026-11-09.md)
+> **현재 상태 · 2026-11-09 소비자 탐색:** **1차 주력 추천 후보 없음.** 병원안은 기술 실험 사례·예비 기획으로 내렸다. 일반 자가용 운전자의 최근 실제 문제를 찾는 중이다. 팀 자체 제품 앱 코드/APK, 실차·사용자 검증, 접수는 없다. Windows 데스크탑 Pleos AVD에서 공식 SDK 샘플과 차량 신호 진단은 실행했다. [일반 운전자 방향 탐색](docs/CONSUMER_DISCOVERY_2026-11-09.md)
 
 ## 처음 합류했다면
 
 1. [공모전 규칙과 제출물](docs/CONTEST.md)을 읽고 **11월 15일 23:59 KST** 1차 마감과 **12월 3~4일** 실제 앱 시연 조건을 확인합니다.
 2. [제품 목표와 후보](docs/PRODUCT_VISION.md)를 읽습니다. 사용자가 원하는 카메라 알림과 주행 후 체크리스트는 구분해서 평가합니다.
 3. [최신 방향 재판단](docs/DIRECTION_REASSESSMENT_2026-11-09.md)과 [이전 독립 재검증](docs/INDEPENDENT_REVIEW_2026-11-09.md)을 읽고, 팀원 보고서 3건의 서로 다른 추천과 실제 SDK 실행 결과를 구분합니다.
-4. 추가 반례가 있으면 [독립 검토 요청](docs/REVIEW_REQUEST.md)의 형식으로 남깁니다. SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다.
+4. [운전자 인터뷰 질문지](docs/DRIVER_INTERVIEW_2026-11-09.md)로 최근 사례와 기존 해결법을 기록합니다. 팀원 AI에는 [2차 독립 검토 요청](docs/REVIEW_ROUND_2_2026-11-09.md)을 보내고, SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다.
 
-로컬에서 문서나 코드를 작업할 때는 조직 권한이 있는 계정으로 저장소를 복제합니다. **현재 제품 앱 프로젝트는 없습니다.** `experiments/`의 Android 프로젝트는 기어·주행 UI 제한 진단용입니다.
+로컬에서 문서나 코드를 작업할 때는 조직 권한이 있는 계정으로 저장소를 복제합니다. **현재 제품 앱 프로젝트는 없습니다.** `experiments/`는 차량 신호·기어·주행 UI 제한 진단용입니다.
 
 ```bash
 git clone https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026.git
@@ -28,8 +28,10 @@ cd hmg-vehicle-app-challenge-2026
 | 누적거리 기반 업무용 운행기록 | **검증 트랙.** 읽기 실행 확인, 기존 서비스와 겹침 | Pleos Fleet·카택스 사용자의 실제 미해결 비용과 자동 구간 분할 증거 |
 | 공용차 연료 인수인계 〈다음 차례〉 | **조건부 탐색.** 현재 에뮬레이터에서 Fuel Percent 미지원 | 지원 실차·공유 프로필·교대 현장의 직접 증거와 기존 관리 앱 대비 이점 |
 | EV 충전 확인 등 기타 후보 | 예비 아이디어 | 실제 충전 상태 신호와 기존 대안 대비 사용자 가치 |
+| 정차 중 초보 운전자 실차 조작 연습 | **조건부 탐색.** 국내 경험담 1건, SDK 정적 조회만 확인 | 최근 실제 사례 3건 이상, 순정 설명서·음성 대비 이득, 차량값 변화 감지 |
+| 비·김서림 준비 / 가족 차량 인계 / 주차장 진입 기억 | 낮은 우선순위 | 반복 문제, 기존 기능의 빈틈, SDK 핵심 신호 |
 
-공식 샘플에서 Vehicle SDK 조회와 NaviHelper 경유지 경로 미리보기가 실행됐지만, Virtual Console의 차량값 변경은 503 오류로 실패했습니다. ADB 차량값 주입도 이 이미지의 `user` 빌드 정책으로 거절됐습니다. **어느 후보도 실제 고객 문제, 차량 고유 이점, 12월 시연 경로를 함께 입증하지 못했습니다.** [수정 근거](docs/DIRECTION_REASSESSMENT_2026-11-09.md)
+공식 샘플에서 Vehicle SDK 조회와 NaviHelper 경유지 경로 미리보기가 실행됐지만, Virtual Console의 차량값 변경은 503 오류로 실패했습니다. ADB 차량값 주입도 이 이미지의 `user` 빌드 정책으로 거절됐습니다. 창문·와이퍼 쓰기 성공 콜백 뒤 현재값은 바뀌지 않았고, 타이어·경고 정보는 권한 오류가 났습니다. **어느 후보도 실제 고객 문제, 차량 고유 이점, 12월 시연 경로를 함께 입증하지 못했습니다.** [새 진단 결과](experiments/consumer-signal-probe/README.md)
 
 ## 1차 전 핵심 Issue
 
@@ -60,11 +62,15 @@ cd hmg-vehicle-app-challenge-2026
 | [PRODUCT_VISION.md](docs/PRODUCT_VISION.md) | 원래 사용자 요구, 후보 상태, 선행 서비스 반례 |
 | [TECHNICAL_VALIDATION.md](docs/TECHNICAL_VALIDATION.md) | SDK/API 접근, 실험 순서, 미확인 조건 |
 | [AAOS 진단 앱 소스](experiments/aaos-gear-probe/README.md) | 데스크탑에서 실행한 기어·UI 제한·직접 누적거리 권한 시험의 재현 코드 |
+| [차량 신호 진단 소스](experiments/consumer-signal-probe/README.md) | 데스크탑 Pleos AVD에서 일반 운전자 후보 관련 조회·쓰기 재조회 결과 |
+| [CONSUMER_DISCOVERY_2026-11-09.md](docs/CONSUMER_DISCOVERY_2026-11-09.md) | 국내 운전자 경험담, 기존 기능 반례, 새 후보와 15일까지의 결정 관문 |
+| [DRIVER_INTERVIEW_2026-11-09.md](docs/DRIVER_INTERVIEW_2026-11-09.md) | 일반 자가용 운전자 10~15분 인터뷰·익명 기록 양식 |
 | [INDEPENDENT_REVIEW_2026-11-09.md](docs/INDEPENDENT_REVIEW_2026-11-09.md) | 팀원 보고서 3건 재평가, 데스크탑 실행 증거, 후보 결정 관문 |
 | [DIRECTION_REASSESSMENT_2026-11-09.md](docs/DIRECTION_REASSESSMENT_2026-11-09.md) | 병원안 주력 추천 해제와 후보별 새 결정 관문. **최신 판단** |
 | [SUBMISSION_PLAN.md](docs/SUBMISSION_PLAN.md) | 공식 기획서 작성·영상·GitHub/APK 체크리스트 |
 | [SUBMISSION_DRAFT_C.md](docs/SUBMISSION_DRAFT_C.md) | 주력 추천에서 내린 병원안의 예비 문안. 검증으로 복귀할 때만 사용 |
 | [REVIEW_REQUEST.md](docs/REVIEW_REQUEST.md) | 팀원 AI 독립 검토 프롬프트와 답변 형식 |
+| [REVIEW_ROUND_2_2026-11-09.md](docs/REVIEW_ROUND_2_2026-11-09.md) | 새 소비자 방향과 실제 SDK 반례를 반영한 2차 독립 검토 요청 |
 | [DECISIONS.md](docs/DECISIONS.md) | 판단 변경과 이유의 기록 |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Issue, 브랜치, PR, 자료 취급 규칙 |
 | [apk/README.md](apk/README.md) | 선택 제출용 APK의 위치와 준비 조건 |

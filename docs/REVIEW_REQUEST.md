@@ -1,14 +1,16 @@
 # 팀원 AI 독립 검토 요청
 
-각 팀원은 **다른 팀원의 AI 답변을 보기 전에** 아래 요청을 자기 AI에 전달한다. 보고서를 Markdown으로 받아 이 저장소의 Issue 또는 각자 문서로 공유한다. 출처가 없는 동의나 숫자 점수보다 반례·실행 관문이 중요하다.
+이 요청의 최초 버전으로 팀원 보고서 3건을 받았고, [2026-11-09 독립 재검증](INDEPENDENT_REVIEW_2026-11-09.md)에 서로 다른 추천과 Pleos 실험을 대조했다. 추가 검토자는 그 문서의 **실행 확인·실패·미확인**을 먼저 확인하고, 다른 팀원의 결론에 동의하기 전에 독자적인 반례를 찾아야 한다. 보고서는 Markdown으로 받아 이 저장소의 Issue 또는 각자 문서로 공유한다.
 
 ```text
 이 저장소 README.md, docs/CONTEST.md, docs/PRODUCT_VISION.md,
-docs/TECHNICAL_VALIDATION.md, docs/SUBMISSION_PLAN.md를 먼저 읽어라.
+docs/TECHNICAL_VALIDATION.md, docs/INDEPENDENT_REVIEW_2026-11-09.md,
+docs/SUBMISSION_PLAN.md를 먼저 읽어라.
 읽을 수 없는 파일은 읽었다고 가정하지 말고 알려라.
 
 너는 현대자동차그룹 2026 차량용 앱 개발 공모전을 준비하는 팀의
-독립 검토자다. 지금까지 주제 선정·앱 개발·실사용자 인터뷰는 없고,
+독립 검토자다. 주제 확정·팀 자체 제품 앱·실사용자 인터뷰는 없다.
+데스크탑에서 공식 Pleos 샘플과 별도 AAOS 진단 앱은 실행했다.
 기존 문서는 검증 대상인 가설이다. 이번에는 조사와 제안만 하며,
 코드 작성·외부 문의·공모전 접수는 하지 마라.
 

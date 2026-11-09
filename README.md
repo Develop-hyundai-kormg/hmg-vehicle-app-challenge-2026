@@ -2,16 +2,16 @@
 
 4인 팀의 아이디어 검증, Pleos 기술 확인, 1차 제출물 준비를 위한 작업 저장소입니다. 추가 팀원 초대와 역할 확인은 진행 예정입니다.
 
-> **현재 상태 · 2026-11-08:** 주제 미확정 · 앱 코드 없음 · Pleos 에뮬레이터/실차 검증 없음 · 접수 전. 이 저장소의 아이디어는 출품 결정이나 구현 완료를 뜻하지 않습니다.
+> **현재 상태 · 2026-11-09:** 주제 미확정 · **조건부 1순위는 병원 환자 하차→보호자 주차→픽업** · 팀 자체 앱 코드/APK 없음 · 데스크탑 Pleos 에뮬레이터에서 공식 SDK 샘플과 별도 AAOS 검증 앱 실행 · 실차/병원 현장/사용자 검증 없음 · 접수 전. [독립 재검증 전체 결과](docs/INDEPENDENT_REVIEW_2026-11-09.md)
 
 ## 처음 합류했다면
 
 1. [공모전 규칙과 제출물](docs/CONTEST.md)을 읽고 **11월 15일 23:59 KST** 1차 마감과 **12월 3~4일** 실제 앱 시연 조건을 확인합니다.
 2. [제품 목표와 후보](docs/PRODUCT_VISION.md)를 읽습니다. 사용자가 원하는 카메라 알림과 주행 후 체크리스트는 구분해서 평가합니다.
-3. [독립 검토 요청](docs/REVIEW_REQUEST.md)을 본인 AI에 전달하고 다른 팀원의 답을 보기 전에 의견을 남깁니다.
-4. SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다. 아이디어를 확정하기 전에는 구현 가능성을 사실로 쓰지 않습니다.
+3. [2026-11-09 독립 재검증](docs/INDEPENDENT_REVIEW_2026-11-09.md)을 읽고, 팀원 보고서 3건의 서로 다른 추천과 실제 SDK 실행 결과를 구분합니다.
+4. 추가 반례가 있으면 [독립 검토 요청](docs/REVIEW_REQUEST.md)의 형식으로 남깁니다. SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다.
 
-로컬에서 문서나 코드를 작업할 때는 조직 권한이 있는 계정으로 저장소를 복제합니다. **현재는 Android 앱 프로젝트가 없어 빌드 명령이 없습니다.**
+로컬에서 문서나 코드를 작업할 때는 조직 권한이 있는 계정으로 저장소를 복제합니다. **현재 제품 앱 프로젝트는 없습니다.** `experiments/`의 Android 프로젝트는 기어·주행 UI 제한 진단용입니다.
 
 ```bash
 git clone https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026.git
@@ -22,19 +22,21 @@ cd hmg-vehicle-app-challenge-2026
 
 | 후보 | 현재 상태 | 먼저 확인할 것 |
 |---|---|---|
-| 목적지 없는 약 250m 카메라 알림·순정 내비 중복 억제 | 원래 제품 목표, **구현·차별성 미검증** | 순정 기능과의 차이, 무경로 이벤트/위치, 자동 시작, 앱 분류와 음성 정책 |
-| 주행 후 관찰 체크리스트·맥락 정정 | **조건부 후보** | 기존 운전 분석 서비스 대비 실사용 가치, 차량 신호와 주차 후 화면의 실제 동작 |
-| 병원 환자 하차→보호자 주차→픽업 | **현장 정보 대기** | 병원 1곳의 합법 승하차점·무계단 출입구·픽업점 |
-| 낯선 차 조작 리허설 | 우선 후보에서 제외 | 기존 차량 안내와의 차이·반복 사용 이유가 새로 확인될 때만 재검토 |
+| 목적지 없는 약 250m 카메라 알림·순정 내비 중복 억제 | 원래 제품 목표, **1차 주력 보류** | 무경로 이벤트·자동 시작·중복 억제·주행 음성 정책의 실제 증거 |
+| 주행 후 관찰 체크리스트·맥락 정정 | **1차 주력 보류** | 기존 분석 앱보다 반복 사용 이유와 실제 사건 관측 |
+| 병원 환자 하차→보호자 주차→픽업 | **조건부 1순위**. 경유지 경로 미리보기 실행 확인 | 병원 1곳의 합법 승하차·출입구·주차·픽업 현장 확인, 실제 보호자 의견, 자체 앱 시연 |
+| 누적거리 기반 업무용 운행기록 | 읽기 실행 확인, **기존 서비스와 겹침** | Pleos Fleet·카택스가 남긴 구체적 빈틈과 자동 분할 증거 |
+| 공용차 연료 인수인계 〈다음 차례〉 | **현재 에뮬레이터에서 Fuel Percent 미지원** | 지원 실차·공유 프로필·교대 현장의 직접 증거 |
+| EV 충전 확인 등 기타 후보 | 예비 아이디어 | 실제 충전 상태 신호와 기존 대안 대비 사용자 가치 |
 
-현재 **1차 주력안과 합격 가능성은 확정하지 않았습니다.** 기존 서비스의 반례와 Pleos 미검증 조건을 확인한 결과, 앞서 추천했던 체크리스트안을 주력안에서 조건부 후보로 내렸습니다. [판단 근거](docs/PRODUCT_VISION.md)
+현재 **출품 주제와 합격 가능성은 확정하지 않았습니다.** 공식 샘플에서 Vehicle SDK 조회와 NaviHelper 경유지 경로 미리보기가 실행됐지만, Virtual Console의 차량값 변경은 503 오류로 실패했습니다. C의 현장·사용자 근거가 확보되기 전까지 구현 가능성과 고객 가치를 합쳐서 성공으로 세지 않습니다. [상세 판단](docs/INDEPENDENT_REVIEW_2026-11-09.md)
 
 ## 1차 전 핵심 Issue
 
 | Issue | 확인할 결과 |
 |---|---|
-| [#1 팀원 AI 독립 검토](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/1) | 서로의 답을 보기 전 반례와 새 후보를 받아 주제 판단 |
-| [#2 Pleos 기술 검증](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/2) | SDK 접근, 앱 콜백, 무목적지 카메라·자동 동작의 실제 결과 |
+| [#1 팀원 AI 독립 검토](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/1) | 세 보고서 수신·재검증 완료. 네 번째 팀원 의견과 실제 사용자·현장 반례는 대기 |
+| [#2 Pleos 기술 검증](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/2) | Vehicle/Navi 공식 샘플의 일부 기능 실행. Virtual Console 값 변경 실패, 자동 카메라·차량 콜백은 미검증 |
 | [#3 혼합팀 참가 부문](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/3) | 운영사무국의 서면 답변 |
 | [#4 기존 서비스·사용자 가치](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/4) | 대상 운전자의 반복 문제와 기존 앱의 남은 빈틈 |
 | [#5 1차 제출물](https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026/issues/5) | 공식 기획서, 선택 영상·소스/APK의 검증된 범위 |
@@ -57,7 +59,10 @@ cd hmg-vehicle-app-challenge-2026
 | [CONTEST.md](docs/CONTEST.md) | 참가 자격, 평가 기준, 제출 형식, 혼합팀 부문 확인 |
 | [PRODUCT_VISION.md](docs/PRODUCT_VISION.md) | 원래 사용자 요구, 후보 상태, 선행 서비스 반례 |
 | [TECHNICAL_VALIDATION.md](docs/TECHNICAL_VALIDATION.md) | SDK/API 접근, 실험 순서, 미확인 조건 |
+| [AAOS 진단 앱 소스](experiments/aaos-gear-probe/README.md) | 데스크탑에서 실행한 기어·UI 제한·직접 누적거리 권한 시험의 재현 코드 |
+| [INDEPENDENT_REVIEW_2026-11-09.md](docs/INDEPENDENT_REVIEW_2026-11-09.md) | 팀원 보고서 3건 재평가, 데스크탑 실행 증거, 후보 결정 관문 |
 | [SUBMISSION_PLAN.md](docs/SUBMISSION_PLAN.md) | 공식 기획서 작성·영상·GitHub/APK 체크리스트 |
+| [SUBMISSION_DRAFT_C.md](docs/SUBMISSION_DRAFT_C.md) | 병원안이 현장·사용자 검증을 통과할 경우 공식 양식 1~6번에 옮길 팀 검토용 문안 |
 | [REVIEW_REQUEST.md](docs/REVIEW_REQUEST.md) | 팀원 AI 독립 검토 프롬프트와 답변 형식 |
 | [DECISIONS.md](docs/DECISIONS.md) | 판단 변경과 이유의 기록 |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Issue, 브랜치, PR, 자료 취급 규칙 |

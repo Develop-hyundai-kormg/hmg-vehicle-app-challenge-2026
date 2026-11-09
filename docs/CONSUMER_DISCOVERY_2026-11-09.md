@@ -6,7 +6,7 @@
 
 1. 국내 실제 사용기와 커뮤니티 글에서 운전자가 **한 상황에서 겪은 불편**을 찾았다. 글 하나는 문제가 존재한다는 단서일 뿐 발생률·유료 의사·Pleos 차량 수요를 입증하지 않는다. 네이버 블로그·카페 본문은 검색 도구가 `robots.txt`로 차단해 읽지 못했다. 접근 가능한 티스토리·뽐뿌·보배드림 결과를 확인했다.
 2. 같은 문제에 대한 현재 현대차·기아 기능을 공식 자료에서 대조했다. [마이현대](https://www.hyundai.com/kr/ko/digital-customer-support/app/myhyundai/myhyundai-information)의 차량 진단·소모품 관리·운전 분석·EV 경로, [블루링크 서비스](https://www.hyundai.com/kr/ko/digital-customer-support/app/myhyundai/bluelink/bluelink-service-overview)의 주차 위치·후석 승객 알림·운행 리포트, [Gleo AI 매뉴얼](https://ownersmanual.hyundai.com/ivi/Connect-S/AVNT/KOR/Korean/003_Corefeatures_1.html)의 공조·창문·차량 정보 음성 명령은 선행 기능이다. 차종/사양별 차이는 별도로 확인해야 한다.
-3. 데스크탑 Pleos AVD에서 팀이 직접 후보 관련 Vehicle SDK를 호출했다. [실험 기록](../experiments/consumer-signal-probe/README.md). 실제 차종, 다른 계정/AVD, 현장 사용성에는 이 결과를 일반화하지 않는다.
+3. 데스크탑 Pleos AVD에서 팀이 직접 후보 관련 Vehicle SDK를 호출하고, 기본 차량 제어 앱의 실제 화면을 확인했다. [실험 기록](../experiments/consumer-signal-probe/README.md). 실제 차종, 다른 계정/AVD, 현장 사용성에는 이 결과를 일반화하지 않는다.
 
 ## 구체적으로 찾은 사용자 단서
 
@@ -23,13 +23,17 @@
 
 | 후보 | 고객 가치 가설 | 기술·선행 기능 반례 | 다음 검증과 현재 판단 |
 |---|---|---|---|
-| **초보 운전자 실차 조작 연습** | 정차 중 와이퍼·공조 등 낯선 조작을 실제 차 상태로 따라 해 보고 익힌다. 운전 중 조작 부담을 낮춘다 | 순정 설명서와 Gleo AI가 기능 안내·음성 제어를 제공한다. AVD에서는 창문/와이퍼 현재값을 읽지만 set 성공 후 값 변화는 확인되지 않았다. 실제 물리 조작 이벤트도 미검증 | 초보 운전자 3명 이상에게 최근 30일 구체 사례와 현행 방법의 실패를 확인. 정차 중 동일 과제의 순정 기능 대비 시간·성공률 비교. **조건부 탐색** |
+| **초보 운전자 실차 조작 연습** | 정차 중 와이퍼·공조 등 낯선 조작을 실제 차 상태로 따라 해 보고 익힌다. 운전 중 조작 부담을 낮춘다 | 순정 설명서와 Gleo AI가 기능 안내·음성 제어를 제공한다. **Pleos 기본 차량 제어 화면에도 창문·잠금·공조·충전·주행 설정이 이미 있다.** AVD에서는 창문/와이퍼 현재값을 읽지만 set 성공 후 값 변화는 확인되지 않았고, 물리 조작 이벤트도 미검증 | 초보 운전자 3명 이상의 최근 사례, 순정 대비 과제 이득, 실제 조작 감지를 모두 확인해야 함. 현재는 **주력 후보 아님** |
 | **우천·김서림 전 준비** | 우천 시 와이퍼/창문/공조 상태를 한 화면에서 확인하고 안전하게 준비한다 | [현대차의 자동 김서림 제거·창문 습기 방지 기능](https://ownersmanual.hyundai.com/full_webhelp/CE1/2025/ko_KR/convenience_device_climate_control_additional_features.html), Gleo AI 공조·창문 제어와 겹친다. AVD는 와이퍼/창문 조회만 성공, 상태 변화는 미확인 | 실제 반복 상황과 순정 기능으로 남는 실패 확인. 자동으로 ‘시야 안전’을 판정하지 않음. **낮은 우선순위** |
 | **가족 자가용 인계** | 같은 차를 번갈아 타는 가족이 다음 운전자에게 필요한 미완료 일을 남긴다 | 차량 프로필·메신저·차량 상태 앱으로 충분할 수 있다. 연료 잔량은 AVD 미지원, 프로필 간 공유 미확인 | 최근 한 달에 교대 후 실제 손실이 있었는지, 다음 운전자가 어떤 정보를 몰랐는지 확인. 자동차 신호가 없으면 일반 메신저와 차이 없음. **낮은 우선순위** |
 | **주차장 입구·출구 기억** | 낯선 장소에서 잘못된 진입/출차를 줄인다 | 지도 즐겨찾기·거리뷰·시설 안내와 겹친다. 입구·층·동선의 정확한 데이터와 갱신 책임이 필요하다 | 2명 이상의 실제 최근 사례와 비교 과제, 데이터 확보 경로 없으면 보류. **아이디어 단계** |
 | **원래 목표: 무목적지 카메라 안내** | 목적지 없이 차에서 약 250m 전 안내, 순정 작동 시 중복 억제 | [Pleos 내비 단일 경로·비활성/백그라운드 안내 제한](https://document.pleos.ai/en/docs/pleos-only/vehicle-app-developer-guide/navigation-app-development-guide). 자동 시작·무경로 이벤트·중복 억제 미검증 | 공식 정책 해석과 목표 차종 테스트 전에는 1차 핵심 기능으로 표현하지 않음. 원래 요구로 보존 |
 
 **배제/후순위 판단:** 타이어 경고·차량 고장 설명은 [현대 리모트케어](https://www.hyundai.com/kr/ko/service-membership/car-management-service/remote-care) 및 차량 진단과 겹치고, 이번 AVD에서 타이어 압력과 telltales 조회는 권한 오류가 났다. 하이패스 카드 잔액·장착 점검은 Pleos Toll API를 로컬 JAR에서 확인한 결과 **음성 안내 볼륨만** 공개돼 핵심 신호가 없다. ‘세차 원터치’는 [기아 순정 세차 모드](https://ownersmanual.kia.com/ivi/ccNC/AVNT/KOR/Korean/Washmode.html)가 이미 존재하며, 안전하게 자동 세차 전체를 지원할 신호/제어도 확보하지 못했다. 모두 현재 주력 추천에서 제외한다.
+
+**Pleos AVD 자체의 선행 기능(11월 9일 추가 확인):** 시스템의 `ai.umos.vehiclecontrol/.VehicleControlActivity`를 실행해 [기본 차량 제어 화면](../experiments/consumer-signal-probe/pleos-oem-vehicle-control-2026-11-09.png)을 캡처했다. 빠른 설정에는 모든 창문·창문 잠금·도어·차일드락·충전구·디스플레이·사이드미러·운전대가 보인다. 공조 화면에는 워셔액 분사·터널 진입·공기 질 저하 때 자동 외부 공기 차단과 실내 과열 방지, 충전 화면에는 충전량·전류·시작/중단, 주행 화면에는 눈·빗길 모드가 있다. **UI 표시 확인**이지 각 기능의 실차 제공 범위나 조작 성공 증거는 아니다. 단순 차량 상태 모아보기·우천 조작 바로가기는 이 기본 기능과 겹친다.
+
+**주행 가능 거리 단위 정정:** AVD에서 읽힌 `500000.0`은 [Android `RANGE_REMAINING` 단위](https://developer.android.com/reference/android/car/VehiclePropertyIds#RANGE_REMAINING)와 [Pleos 콘솔 단위](https://document.pleos.ai/docs/pleos-only/app-test-guide/virtual-console-guide)에 따르면 **500,000m = 500km**다. 기본 차량 화면의 500km와도 일치한다. 초기의 '비현실적 값' 판단은 단위 오류였다. 유효한 정적 조회가 하나 늘었지만, [현대차 EV 경로 플래너](https://ownersmanual.hyundai.com/ivi/ccNC/AVNT/KOR/Korean/EV.html)는 이미 잔여 주행 거리와 목적지·충전소를 연결한다. 단순 잔여 거리/충전소 추천은 주력 차별점이 아니다.
 
 ## 지금 가능한 결정
 

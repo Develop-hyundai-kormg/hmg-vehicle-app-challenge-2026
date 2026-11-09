@@ -15,10 +15,14 @@
 | Safety telltales 조회 | `SecurityException: ... need Permission` | 현재 접근 실패 |
 | 워셔액 부족 경고 조회 | `property ID ... not supported: 0x2120071e` | 이 AVD에서 미지원 |
 | 연료 백분율 조회 | `property ID ... not supported: 0x21400be5` | 이 AVD에서 미지원. 이전 독립 시험 결과와 일치 |
-| 남은 거리 조회 | `500000.0` | 비현실적 AVD 기본값으로 판단. 실제 주행 가능 거리의 증거 아님. 이 SDK 메서드는 deprecated 경고도 발생 |
+| 남은 거리 조회 | `500000.0` **미터 = 500km** | [Android `RANGE_REMAINING` 단위](https://developer.android.com/reference/android/car/VehiclePropertyIds#RANGE_REMAINING)와 [Pleos 콘솔의 Remaining Range 단위](https://document.pleos.ai/docs/pleos-only/app-test-guide/virtual-console-guide)가 미터이며, AVD 기본 화면에도 500km가 표시됐다. **초기 '비현실적 값' 해석은 단위 오류로 정정.** 이 SDK 메서드는 deprecated 경고가 발생했고 실차 정확도·동적 변화는 미확인 |
 | 누적거리, EV SOC, 충전 스위치, 운전석 문 위치 | 각 `0.0`, `100`, `false`, `0` | 정적 현재값 읽기 성공. 변화 감지나 실제 차량 정확도는 미확인 |
 
 핵심 결론: **문서상 기능 → AVD capability → 현재값 읽기 → 상태 변경 → 실차 동작**은 서로 다른 증거다. 이번 AVD는 창문·와이퍼 읽기가 되지만, 앱의 `set` 성공 응답 후 값 변화는 확인되지 않았다. 따라서 이 두 신호의 변화에 의존하는 데모를 실제 동작으로 소개할 수 없다. 다른 차종이나 테스트 환경 전체가 불가능하다는 뜻은 아니다. [차종별 API 호환성 원칙](https://document.pleos.ai/en/docs/pleos-only/vehicle-app-planning-guide/api-compatibility-availability)
+
+## 기본 차량 제어 앱과의 중복 확인
+
+11월 9일 같은 AVD에서 `ai.umos.vehiclecontrol/.VehicleControlActivity`를 실행했다. [실제 화면 캡처](pleos-oem-vehicle-control-2026-11-09.png)에 창문·잠금·공조 등 기본 제어가 보인다. UI 구조에서 충전량·충전 전류·충전 시작, 공조의 자동 외부 공기 차단, 주행의 눈·빗길 모드도 확인했다. **UI 표시 확인**이며 해당 조작의 상태 변화나 실차 지원은 별도다. 이로 인해 단순 상태 화면·우천 바로가기의 차별화 근거가 약해졌다.
 
 ## 재현
 

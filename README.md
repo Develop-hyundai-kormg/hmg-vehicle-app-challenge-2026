@@ -2,7 +2,7 @@
 
 4인 팀의 아이디어 검증, Pleos 기술 확인, 1차 제출물 준비를 위한 작업 저장소입니다. 추가 팀원 초대와 역할 확인은 진행 예정입니다.
 
-> **현재 상태 · 2026-11-10:** [지금까지의 주제와 미선정 이유](docs/IDEA_HISTORY.md)를 모았다. 사용자가 〈다음 운전자〉, 픽업·주차 후보, 자동세차 준비안을 내렸고 간헐 고장 기록·말 콘텐츠 이어듣기는 재판단 후 주력 추천에서 철회했다. **출품 주제는 미확정**이다. 팀 자체 제품 앱 코드/APK, 실차·사용자 검증, 접수는 없다. 11월 9일의 [인계안](docs/FIRST_ROUND_DIRECTION_2026-11-09.md)과 [제출 문안](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md)은 당시 이력이다.
+> **현재 상태 · 2026-11-10:** [지금까지의 주제와 미선정 이유](docs/IDEA_HISTORY.md)를 모았다. 사용자가 〈다음 운전자〉, 픽업·주차 후보, 자동세차 준비안을 내렸고 간헐 고장 기록·말 콘텐츠 이어듣기는 재판단 후 주력 추천에서 철회했다. [3차 탐색](docs/IDEA_SCAN_ROUND3_2026-11-10.md)의 〈다시 큰길로〉는 문제 사례가 있으나 기존 경로 옵션 대비 이점과 도로 데이터가 미확인인 **조건부 가설**이다. **출품 주제는 미확정**이다. 팀 자체 제품 앱 코드/APK, 실차·사용자 검증, 접수는 없다. 11월 9일의 [인계안](docs/FIRST_ROUND_DIRECTION_2026-11-09.md)과 [제출 문안](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md)은 당시 이력이다.
 
 ## 처음 합류했다면
 
@@ -73,6 +73,7 @@ cd hmg-vehicle-app-challenge-2026
 | [CONSUMER_DISCOVERY_2026-11-09.md](docs/CONSUMER_DISCOVERY_2026-11-09.md) | 국내 운전자 경험담, 기존 기능 반례, 새 후보와 15일까지의 결정 관문 |
 | [COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md) | 주력 추천에서 내린 간헐 고장 기록의 조사 이력 |
 | [COMMUNITY_IDEA_SCAN_2026-11-10.md](docs/COMMUNITY_IDEA_SCAN_2026-11-10.md) | 내린 픽업·주차 후보의 당시 탐색 이력 |
+| [IDEA_SCAN_ROUND3_2026-11-10.md](docs/IDEA_SCAN_ROUND3_2026-11-10.md) | 초행길 재탐색 문제와 3차 제외안의 근거·남은 관문 |
 | [FIRST_ROUND_DIRECTION_2026-11-09.md](docs/FIRST_ROUND_DIRECTION_2026-11-09.md) | **탈락한 과거 작업안** 〈다음 운전자〉의 당시 판단 |
 | [SUBMISSION_DRAFT_NEXT_DRIVER.md](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md) | **사용 금지:** 탈락한 과거 작업안의 접수양식 초안 |
 | [TEAM_REVIEW_NEXT_DRIVER.md](docs/TEAM_REVIEW_NEXT_DRIVER.md) | 탈락한 과거 작업안의 당시 팀 검토 프롬프트 |

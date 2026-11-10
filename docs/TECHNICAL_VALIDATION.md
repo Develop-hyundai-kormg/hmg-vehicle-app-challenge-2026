@@ -1,6 +1,6 @@
 # Pleos 기술 검증표
 
-기준일: **2026-11-09**. 이 표의 `문서 확인`은 팀 계정·에뮬레이터·차량에서의 성공을 뜻하지 않는다. 저장소에는 아직 팀 자체 앱 코드나 APK가 없다. 아래의 실행 결과는 **데스크탑에 설치한 공식 샘플과 별도 검증 APK**의 결과다. 상세 조건·반례는 [독립 재검증](INDEPENDENT_REVIEW_2026-11-09.md)에 기록했다.
+기준일: **2026-11-10**. 이 표의 `문서 확인`은 팀 계정·에뮬레이터·차량에서의 성공을 뜻하지 않는다. 저장소에는 아직 팀 자체 제품 앱 코드나 APK가 없다. 아래의 실행 결과는 **데스크탑에 설치한 공식 샘플과 별도 검증 APK**의 결과다. 상세 조건·반례는 [독립 재검증](INDEPENDENT_REVIEW_2026-11-09.md)에 기록했다. 카메라안의 최신 판단은 [추가 검증](CAMERA_ALERT_INDEPENDENT_REVIEW_2026-11-10.md)을 우선한다.
 
 ## 11월 9일 데스크탑 실행 상태
 
@@ -14,6 +14,8 @@
 **추가 시험(2026-11-09):** Pleos 전용 AVD의 `ro.build.type=user`를 확인했다. AAOS 공식 문서의 `dumpsys activity service com.android.car inject-vhal-event` 실행 뒤에도 기어 조회는 P(4)였고, `adb shell cmd car_service inject-vhal-event 0x11400400 8`은 `SecurityException: ... requires non-user build`로 거절됐다. 이는 Virtual Console 503과 별도인 제한이다. 현재 확보한 경로로 기어/거리 변화 콜백을 시연할 수 있다고 쓰지 않는다. 다른 지원 테스트 경로까지 불가능하다고 일반화하지 않는다. [최신 실험·후보 판단](DIRECTION_REASSESSMENT_2026-11-09.md), [Android 공식 가상 주행 시험](https://source.android.com/docs/automotive/driver_distraction/consume)
 
 **일반 운전자 후보용 추가 시험(2026-11-09):** [진단 소스·재현 결과](../experiments/consumer-signal-probe/README.md). 창문 위치 `0`과 와이퍼 `OFF`는 읽혔다. 각각 쓰기 요청은 성공 응답이 왔지만 즉시·5초 뒤 재조회 모두 원래 값이었다. 타이어 압력과 Safety telltales는 권한 오류, 워셔액 부족 경고는 미지원 오류였다. 남은 거리 `500000.0`은 **미터 단위의 500km**로, AVD 기본 화면과 일치한다. 초기 비현실적 값 판정은 단위 오류였다. 메서드는 deprecated이며 실차 정확도·변화 감지는 미확인. **읽기·쓰기 응답·상태 변화·실차 작동을 분리**한다.
+
+**카메라안 정적 확인(2026-11-10):** 데스크탑의 공식 `NaviHelper 3.0.5`와 `navi-data 3.0.4` AAR에는 `onCameraAlert`, `CameraAlert.getRemainDistance()`, `NavigationStatus.FREE_DRIVE`가 있다. Pleos AVD도 다시 부팅됐다. 카메라 이벤트를 재현할 시나리오와 진단 리스너는 없어 실제 자유 주행 전달·250m 안내·시동 자동 실행은 **시험하지 못했다**. SDK 구조만으로 1차 주력 추천을 유지하지 않는다. [재검증](CAMERA_ALERT_INDEPENDENT_REVIEW_2026-11-10.md)
 
 공식 Vehicle 샘플은 공개 빌드가 처음 실패했다. 샘플의 Vehicle 2.3.1 고정 의존성을 **검증용 복제본에서만** 공개 저장소에 있는 2.3.2로 바꾸자 빌드됐다. 이는 원본 샘플의 무수정 빌드 성공으로 보고하지 않는다.
 

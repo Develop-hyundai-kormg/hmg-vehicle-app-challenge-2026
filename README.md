@@ -2,12 +2,12 @@
 
 4인 팀의 아이디어 검증, Pleos 기술 확인, 1차 제출물 준비를 위한 작업 저장소입니다. 추가 팀원 초대와 역할 확인은 진행 예정입니다.
 
-> **현재 상태 · 2026-11-10:** 사용자가 〈다음 운전자〉와 픽업·주차 후보를 내렸다. [간헐 고장 기록안](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md)도 재판단 결과 현재 1차 주력 추천에서 내렸다. **출품 주제는 미확정**이다. 팀 자체 제품 앱 코드/APK, 실차·사용자 검증, 접수는 없다. 11월 9일의 [인계안](docs/FIRST_ROUND_DIRECTION_2026-11-09.md)과 [제출 문안](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md)은 당시 이력이다.
+> **현재 상태 · 2026-11-10:** [지금까지의 주제와 미선정 이유](docs/IDEA_HISTORY.md)를 모았다. 사용자가 〈다음 운전자〉, 픽업·주차 후보, 자동세차 준비안을 내렸고 간헐 고장 기록·말 콘텐츠 이어듣기는 재판단 후 주력 추천에서 철회했다. **출품 주제는 미확정**이다. 팀 자체 제품 앱 코드/APK, 실차·사용자 검증, 접수는 없다. 11월 9일의 [인계안](docs/FIRST_ROUND_DIRECTION_2026-11-09.md)과 [제출 문안](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md)은 당시 이력이다.
 
 ## 처음 합류했다면
 
 1. [공모전 규칙과 제출물](docs/CONTEST.md)을 읽고 **11월 15일 23:59 KST** 1차 마감과 **12월 3~4일** 실제 앱 시연 조건을 확인합니다.
-2. [간헐 고장 기록 조사](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md)와 [픽업·주차 탐색](docs/COMMUNITY_IDEA_SCAN_2026-11-10.md)은 당시 이력입니다. 모두 현재 제출 문안으로 사용하지 않습니다.
+2. [주제 탐색 이력과 미선정 이유](docs/IDEA_HISTORY.md)에서 지금까지의 후보, 사용자 탈락과 추천 철회를 먼저 구분합니다. 상세 조사인 [간헐 고장 기록](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md)과 [픽업·주차](docs/COMMUNITY_IDEA_SCAN_2026-11-10.md)는 당시 이력이며 현재 제출 문안이 아닙니다.
 3. [제품 목표와 후보](docs/PRODUCT_VISION.md), [이전 방향 재판단](docs/DIRECTION_REASSESSMENT_2026-11-09.md)과 [독립 재검증](docs/INDEPENDENT_REVIEW_2026-11-09.md)으로 선정 이전 판단과 SDK 실행 결과를 확인합니다.
 4. [운전자 인터뷰 질문지](docs/DRIVER_INTERVIEW_2026-11-09.md)의 중립 질문으로 최근 실제 문제와 기존 해결법을 기록하고, SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다.
 
@@ -23,6 +23,8 @@ cd hmg-vehicle-app-challenge-2026
 | 후보 | 현재 상태 | 먼저 확인할 것 |
 |---|---|---|
 | 간헐 고장 발생 조건 기록 〈증상 순간〉 | **주력 추천 해제** | 드문 사용 순간, OBD 앱과 차별성·Pleos 지속 기록 미입증 |
+| 말 콘텐츠 〈말 이어듣기〉 | **주력 추천 해제** | 기존 오디오 앱의 자동 되감기와 겹치고 방향지시등 연동 효용 미입증 |
+| 자동세차 진입 전 확인 | **사용자가 탈락 결정** | 순정 세차 모드와 겹치고 핵심 차량 상태·변화 시연 미확인 |
 | 학원 픽업 대기/재방문 판단 | **사용자 피드백으로 주력에서 내림** | 과거 탐색 이력만 보존 |
 | 큰 차의 주차장 진입 사전 확인 | **사용자 피드백으로 주력에서 내림** | 과거 탐색 이력만 보존 |
 | 가족 자가용 인계 〈다음 운전자〉 | **사용자가 탈락 결정** | 과거 이력만 보존 |
@@ -63,6 +65,7 @@ cd hmg-vehicle-app-challenge-2026
 | 문서 | 용도 |
 |---|---|
 | [CONTEST.md](docs/CONTEST.md) | 참가 자격, 평가 기준, 제출 형식, 혼합팀 부문 확인 |
+| [IDEA_HISTORY.md](docs/IDEA_HISTORY.md) | 지금까지 찾은 주제, 사용자 판단·추천 철회·보류와 미선정 이유 |
 | [PRODUCT_VISION.md](docs/PRODUCT_VISION.md) | 원래 사용자 요구, 후보 상태, 선행 서비스 반례 |
 | [TECHNICAL_VALIDATION.md](docs/TECHNICAL_VALIDATION.md) | SDK/API 접근, 실험 순서, 미확인 조건 |
 | [AAOS 진단 앱 소스](experiments/aaos-gear-probe/README.md) | 데스크탑에서 실행한 기어·UI 제한·직접 누적거리 권한 시험의 재현 코드 |

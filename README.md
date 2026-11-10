@@ -2,12 +2,12 @@
 
 4인 팀의 아이디어 검증, Pleos 기술 확인, 1차 제출물 준비를 위한 작업 저장소입니다. 추가 팀원 초대와 역할 확인은 진행 예정입니다.
 
-> **현재 상태 · 2026-11-10:** 사용자가 〈다음 운전자〉와 이어 제안한 픽업·주차 후보를 모두 내렸다. [간헐 고장 기록 후속 탐색](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md)은 **조건부 검증 후보**이며 **1차 출품 주제는 미확정**이다. 팀 자체 제품 앱 코드/APK, 실차·사용자 검증, 접수는 없다. 11월 9일의 [인계안](docs/FIRST_ROUND_DIRECTION_2026-11-09.md)과 [제출 문안](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md)은 당시 이력이다.
+> **현재 상태 · 2026-11-10:** 사용자가 〈다음 운전자〉와 픽업·주차 후보를 내렸다. [간헐 고장 기록안](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md)도 재판단 결과 현재 1차 주력 추천에서 내렸다. **출품 주제는 미확정**이다. 팀 자체 제품 앱 코드/APK, 실차·사용자 검증, 접수는 없다. 11월 9일의 [인계안](docs/FIRST_ROUND_DIRECTION_2026-11-09.md)과 [제출 문안](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md)은 당시 이력이다.
 
 ## 처음 합류했다면
 
 1. [공모전 규칙과 제출물](docs/CONTEST.md)을 읽고 **11월 15일 23:59 KST** 1차 마감과 **12월 3~4일** 실제 앱 시연 조건을 확인합니다.
-2. [간헐 고장 기록 후속 조사](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md)의 원문 사례·반례·기술 관문을 확인합니다. [픽업·주차 탐색](docs/COMMUNITY_IDEA_SCAN_2026-11-10.md)과 11월 9일의 〈다음 운전자〉 자료는 현재 제출 문안으로 사용하지 않습니다.
+2. [간헐 고장 기록 조사](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md)와 [픽업·주차 탐색](docs/COMMUNITY_IDEA_SCAN_2026-11-10.md)은 당시 이력입니다. 모두 현재 제출 문안으로 사용하지 않습니다.
 3. [제품 목표와 후보](docs/PRODUCT_VISION.md), [이전 방향 재판단](docs/DIRECTION_REASSESSMENT_2026-11-09.md)과 [독립 재검증](docs/INDEPENDENT_REVIEW_2026-11-09.md)으로 선정 이전 판단과 SDK 실행 결과를 확인합니다.
 4. [운전자 인터뷰 질문지](docs/DRIVER_INTERVIEW_2026-11-09.md)의 중립 질문으로 최근 실제 문제와 기존 해결법을 기록하고, SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다.
 
@@ -22,7 +22,7 @@ cd hmg-vehicle-app-challenge-2026
 
 | 후보 | 현재 상태 | 먼저 확인할 것 |
 |---|---|---|
-| 간헐 고장 발생 조건 기록 〈증상 순간〉 | **새 조건부 검증 후보. 출품 미확정** | 실제 경험자·정비사 효용, Pleos 속도/거리 지속 기록, OBD 앱 대비 가치 |
+| 간헐 고장 발생 조건 기록 〈증상 순간〉 | **주력 추천 해제** | 드문 사용 순간, OBD 앱과 차별성·Pleos 지속 기록 미입증 |
 | 학원 픽업 대기/재방문 판단 | **사용자 피드백으로 주력에서 내림** | 과거 탐색 이력만 보존 |
 | 큰 차의 주차장 진입 사전 확인 | **사용자 피드백으로 주력에서 내림** | 과거 탐색 이력만 보존 |
 | 가족 자가용 인계 〈다음 운전자〉 | **사용자가 탈락 결정** | 과거 이력만 보존 |
@@ -68,7 +68,7 @@ cd hmg-vehicle-app-challenge-2026
 | [AAOS 진단 앱 소스](experiments/aaos-gear-probe/README.md) | 데스크탑에서 실행한 기어·UI 제한·직접 누적거리 권한 시험의 재현 코드 |
 | [차량 신호 진단 소스](experiments/consumer-signal-probe/README.md) | 데스크탑 Pleos AVD에서 일반 운전자 후보 관련 조회·쓰기 재조회 결과 |
 | [CONSUMER_DISCOVERY_2026-11-09.md](docs/CONSUMER_DISCOVERY_2026-11-09.md) | 국내 운전자 경험담, 기존 기능 반례, 새 후보와 15일까지의 결정 관문 |
-| [COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md) | **현재 탐색:** 간헐 고장 기록의 원문 사례, 기존 기능 반례, 기술·사용자 관문 |
+| [COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md) | 주력 추천에서 내린 간헐 고장 기록의 조사 이력 |
 | [COMMUNITY_IDEA_SCAN_2026-11-10.md](docs/COMMUNITY_IDEA_SCAN_2026-11-10.md) | 내린 픽업·주차 후보의 당시 탐색 이력 |
 | [FIRST_ROUND_DIRECTION_2026-11-09.md](docs/FIRST_ROUND_DIRECTION_2026-11-09.md) | **탈락한 과거 작업안** 〈다음 운전자〉의 당시 판단 |
 | [SUBMISSION_DRAFT_NEXT_DRIVER.md](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md) | **사용 금지:** 탈락한 과거 작업안의 접수양식 초안 |

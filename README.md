@@ -2,12 +2,12 @@
 
 4인 팀의 아이디어 검증, Pleos 기술 확인, 1차 제출물 준비를 위한 작업 저장소입니다. 추가 팀원 초대와 역할 확인은 진행 예정입니다.
 
-> **현재 상태 · 2026-11-10:** [지금까지의 주제와 미선정 이유](docs/IDEA_HISTORY.md)를 모았다. 사용자가 〈다음 운전자〉, 픽업·주차 후보, 자동세차 준비안을 내렸고 간헐 고장 기록·말 콘텐츠 이어듣기는 재판단 후 주력 추천에서 철회했다. [3차 탐색](docs/IDEA_SCAN_ROUND3_2026-11-10.md)의 〈다시 큰길로〉는 주력 추천하지 않는다. [4차 재탐색](docs/IDEA_SCAN_ROUND4_2026-11-10.md)에서 사용자의 **목적지 없는 카메라 알림** 원안에 관련된 SDK 콜백을 확인했으나, [독립 재검증](docs/CAMERA_ALERT_INDEPENDENT_REVIEW_2026-11-10.md) 결과 **1차 단독 주력 추천은 철회**했다. 거리 자료형·자유 주행 상태는 SDK에 있으나 무목적지 이벤트·자동 대기·실제 중복 억제는 **실행 미확인**이고, RadarNav·순정 내비와의 남는 차별성도 입증하지 못했다. **출품 주제는 미확정**이다. 팀 자체 제품 앱 코드/APK, 실차·사용자 검증, 접수는 없다. 11월 9일의 [인계안](docs/FIRST_ROUND_DIRECTION_2026-11-09.md)과 [제출 문안](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md)은 당시 이력이다.
+> **현재 상태 · 2026-11-12:** **검증된 1차 제출 주제는 아직 없다.** 자동차보험 마일리지 특약의 [〈할인 경계〉](docs/FIRST_ROUND_TOPIC_INSURANCE_MILEAGE_2026-11-12.md)를 초기 선정했으나, [검증 감사](docs/INSURANCE_MILEAGE_VALIDATION_AUDIT_2026-11-12.md) 뒤 1차 제출 추천을 보류했다. 보험 할인 구간, Pleos AVD의 누적거리 정적 조회, [공식 샘플의 순정 내비 경로거리 콜백 12km](docs/NAVI_DESTINATION_DISTANCE_RUNTIME_PROBE_2026-11-12.md)은 확인했다. **실제 사용자 과제 이득·재사용성·자체 앱 결합은 미확인**이다. 앞서 골랐던 리스 [〈거리예산〉도 선행 제품 반례로 철회](docs/CANDIDATE_LEASE_DISTANCE_BUDGET_WITHDRAWN_2026-11-12.md)했다. 팀 자체 제품 앱 코드/APK와 공식 접수는 아직 없다.
 
 ## 처음 합류했다면
 
 1. [공모전 규칙과 제출물](docs/CONTEST.md)을 읽고 **11월 15일 23:59 KST** 1차 마감과 **12월 3~4일** 실제 앱 시연 조건을 확인합니다.
-2. [주제 탐색 이력과 미선정 이유](docs/IDEA_HISTORY.md)에서 지금까지의 후보, 사용자 탈락과 추천 철회를 먼저 구분합니다. 상세 조사인 [간헐 고장 기록](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md)과 [픽업·주차](docs/COMMUNITY_IDEA_SCAN_2026-11-10.md)는 당시 이력이며 현재 제출 문안이 아닙니다.
+2. [〈할인 경계〉 검증 감사](docs/INSURANCE_MILEAGE_VALIDATION_AUDIT_2026-11-12.md)와 [주제 탐색 이력](docs/IDEA_HISTORY.md)을 먼저 읽고, 이전 후보의 사용자 탈락과 추천 철회를 구분합니다. [〈할인 경계〉 기획서 초안](docs/FIRST_ROUND_TOPIC_INSURANCE_MILEAGE_2026-11-12.md), [간헐 고장 기록](docs/COMMUNITY_IDEA_SCAN_ROUND2_2026-11-10.md), [픽업·주차](docs/COMMUNITY_IDEA_SCAN_2026-11-10.md)는 현재 검증된 제출 문안이 아닙니다.
 3. [제품 목표와 후보](docs/PRODUCT_VISION.md), [이전 방향 재판단](docs/DIRECTION_REASSESSMENT_2026-11-09.md)과 [독립 재검증](docs/INDEPENDENT_REVIEW_2026-11-09.md)으로 선정 이전 판단과 SDK 실행 결과를 확인합니다.
 4. [운전자 인터뷰 질문지](docs/DRIVER_INTERVIEW_2026-11-09.md)의 중립 질문으로 최근 실제 문제와 기존 해결법을 기록하고, SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다.
 
@@ -22,6 +22,8 @@ cd hmg-vehicle-app-challenge-2026
 
 | 후보 | 현재 상태 | 먼저 확인할 것 |
 |---|---|---|
+| 보험 마일리지 특약 〈할인 경계〉 | **1차 제출 추천 보류** | 특약 운전자 과제 비교, 재사용성, 자체 앱의 거리 결합 |
+| 리스·장기렌트 〈거리예산〉 | **추가 반례로 주력 철회** | 기존 리스+경로 결합 서비스와 금융사 거리 조회가 존재 |
 | 간헐 고장 발생 조건 기록 〈증상 순간〉 | **주력 추천 해제** | 드문 사용 순간, OBD 앱과 차별성·Pleos 지속 기록 미입증 |
 | 말 콘텐츠 〈말 이어듣기〉 | **주력 추천 해제** | 기존 오디오 앱의 자동 되감기와 겹치고 방향지시등 연동 효용 미입증 |
 | 자동세차 진입 전 확인 | **사용자가 탈락 결정** | 순정 세차 모드와 겹치고 핵심 차량 상태·변화 시연 미확인 |
@@ -37,7 +39,7 @@ cd hmg-vehicle-app-challenge-2026
 | 정차 중 초보 운전자 실차 조작 연습 | **주력 보류.** 국내 경험담 1건, SDK 정적 조회만 확인. Pleos 기본 차량 제어 화면과 겹침 | 최근 실제 사례 3건 이상, 순정 설명서·음성·기본 제어 대비 이득, 차량값 변화 감지 |
 | 비·김서림 준비 / 주차장 진입 기억 | 낮은 우선순위 | 반복 문제, 기존 기능의 빈틈, SDK 핵심 신호 |
 
-공식 샘플에서 Vehicle SDK 정적 조회와 NaviHelper 경유지 경로 미리보기가 실행됐지만, Virtual Console의 차량값 변경은 503 오류로 실패했습니다. ADB 차량값 주입도 이 이미지의 `user` 빌드 정책으로 거절됐습니다. 창문·와이퍼 쓰기 성공 콜백 뒤 현재값은 바뀌지 않았고, 타이어·경고 정보는 권한 오류가 났습니다. **새 후보의 ETA 비교와 차량 치수 조회는 아직 실행 확인되지 않았습니다.** [진단 결과](experiments/consumer-signal-probe/README.md)
+공식 샘플에서 Vehicle SDK 정적 조회와 NaviHelper 경유지 경로 미리보기, [좌표 경로 12km의 `onDestinationInfo` 콜백](docs/NAVI_DESTINATION_DISTANCE_RUNTIME_PROBE_2026-11-12.md)이 실행됐습니다. Virtual Console의 차량값 변경은 503 오류로 실패했습니다. ADB 차량값 주입도 이 이미지의 `user` 빌드 정책으로 거절됐습니다. 창문·와이퍼 쓰기 성공 콜백 뒤 현재값은 바뀌지 않았고, 타이어·경고 정보는 권한 오류가 났습니다. **새 후보의 ETA 비교와 차량 치수 조회는 아직 실행 확인되지 않았습니다.** [진단 결과](experiments/consumer-signal-probe/README.md)
 
 ## 1차 전 핵심 Issue
 
@@ -64,6 +66,10 @@ cd hmg-vehicle-app-challenge-2026
 
 | 문서 | 용도 |
 |---|---|
+| [INSURANCE_MILEAGE_VALIDATION_AUDIT_2026-11-12.md](docs/INSURANCE_MILEAGE_VALIDATION_AUDIT_2026-11-12.md) | 이전 선정의 검증 범위와 정정, 핵심 미검증 항목 |
+| [NAVI_DESTINATION_DISTANCE_RUNTIME_PROBE_2026-11-12.md](docs/NAVI_DESTINATION_DISTANCE_RUNTIME_PROBE_2026-11-12.md) | Linux Pleos AVD의 12km 경로거리 콜백 실행 결과·목적지 좌표 반례·재현 절차 |
+| [FIRST_ROUND_TOPIC_INSURANCE_MILEAGE_2026-11-12.md](docs/FIRST_ROUND_TOPIC_INSURANCE_MILEAGE_2026-11-12.md) | 검증 대기 후보의 선행 서비스 반례, 문안 초안과 시연 관문 |
+| [CANDIDATE_LEASE_DISTANCE_BUDGET_WITHDRAWN_2026-11-12.md](docs/CANDIDATE_LEASE_DISTANCE_BUDGET_WITHDRAWN_2026-11-12.md) | 선행 제품 재검증 뒤 주력 추천을 철회한 리스 거리예산 이력 |
 | [CONTEST.md](docs/CONTEST.md) | 참가 자격, 평가 기준, 제출 형식, 혼합팀 부문 확인 |
 | [IDEA_HISTORY.md](docs/IDEA_HISTORY.md) | 지금까지 찾은 주제, 사용자 판단·추천 철회·보류와 미선정 이유 |
 | [PRODUCT_VISION.md](docs/PRODUCT_VISION.md) | 원래 사용자 요구, 후보 상태, 선행 서비스 반례 |

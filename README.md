@@ -2,14 +2,14 @@
 
 4인 팀의 아이디어 검증, Pleos 기술 확인, 1차 제출물 준비를 위한 작업 저장소입니다. 추가 팀원 초대와 역할 확인은 진행 예정입니다.
 
-> **현재 상태 · 2026-11-15 KST:** 사용자가 〈회전 습관 거울〉을 1차 주제로 선택했다. [자체 앱 소스](turn-mirror-app/)와 [서명된 release APK](apk/turn-mirror-prototype_release.apk)를 준비했다. Pleos AVD에서 방향지시등·조향각의 capability READ와 정적 현재값 OFF/0.0, 관찰 시작·종료·결과 화면, 명확히 표시된 예시 재생·정정을 실행 확인했다. **차량값 변화 → 실제 후보 생성은 미확인**이다. Virtual Console의 두 값 변경 요청은 503 `emulator_inactive`였다. [재현 증거와 한계](docs/TURN_MIRROR_PROTOTYPE_2026-11-15.md)를 먼저 읽는다. 공식 접수·개인정보/서명 작성은 아직 팀의 별도 작업이다.
+> **현재 상태 · 2026-11-15 KST:** 사용자가 〈회전 습관 거울〉을 1차 주제로 선택했다. [자체 앱 소스](turn-mirror-app/)와 [서명된 release APK](apk/상명F4_회전습관거울_release.apk)를 준비했다. Pleos AVD에서 방향지시등·조향각의 capability READ와 정적 현재값 OFF/0.0, 관찰 시작·종료·결과 화면, 명확히 표시된 예시 재생·정정을 실행 확인했다. **차량값 변화 → 실제 후보 생성은 미확인**이다. Virtual Console의 두 값 변경 요청은 503 `emulator_inactive`였다. [재현 증거와 한계](docs/TURN_MIRROR_PROTOTYPE_2026-11-15.md)를 먼저 읽는다. 공식 접수·개인정보/서명 작성은 아직 팀의 별도 작업이다.
 
 ## 〈회전 습관 거울〉 1차 개발 산출물
 
 앱은 사용자가 화면에서 관찰을 시작하면 Pleos Vehicle SDK 2.3.2로 방향지시등과 조향각을 읽고 구독한다. 조향각이 처음 45°를 넘는 순간을 **조향 변화 후보**로 남기고, 관찰을 종료한 뒤 후보를 `회전 아님`으로 정정할 수 있다. 이 기준은 초기 구현값이며 실제 도로 회전이나 안전·법규 준수를 판정하지 않는다. `예시 화면 보기`는 고정 합성 입력을 같은 검토 로직에 통과시키며 전 화면에 실제 운행이 아님을 표시한다. 세션은 메모리에만 있고 앱 화면을 벗어나면 관찰이 끝난다.
 
-- APK: [`apk/turn-mirror-prototype_release.apk`](apk/turn-mirror-prototype_release.apk), SHA-256 `aa8dfae270653b17fd75d41156b1b568fbed89d2b9319c4e95c0971b3e491e0c`. 작업 시점에 팀명을 전달받지 못해 공식 권장 파일명 `팀명_앱이름_release.apk`로 확정하지 않았다. 제출 전에 이름을 바꾸면 새 커밋 해시를 메일에 적는다.
-- 실행: Pleos AVD가 켜진 상태에서 저장소 루트의 `adb install -r apk/turn-mirror-prototype_release.apk`, 이어 `adb shell am start -n org.hmgchallenge.turnmirror/.MainActivity`. 앱에서 `실제 관찰 시작`을 누른다.
+- APK: [`apk/상명F4_회전습관거울_release.apk`](apk/상명F4_회전습관거울_release.apk), SHA-256 `aa8dfae270653b17fd75d41156b1b568fbed89d2b9319c4e95c0971b3e491e0c`. 작업 시점에 팀명을 전달받지 못해 공식 권장 파일명 `팀명_앱이름_release.apk`로 확정하지 않았다. 제출 전에 이름을 바꾸면 새 커밋 해시를 메일에 적는다.
+- 실행: Pleos AVD가 켜진 상태에서 저장소 루트의 `adb install -r apk/상명F4_회전습관거울_release.apk`, 이어 `adb shell am start -n org.hmgchallenge.turnmirror/.MainActivity`. 앱에서 `실제 관찰 시작`을 누른다.
 - 빌드: Windows JDK 17, Android SDK API 35와 Pleos Maven 접근이 있는 환경에서 `cd turn-mirror-app` 후 `gradlew.bat testReleaseUnitTest assembleRelease`. Gradle 8.10.2 wrapper가 포함된다. `app/build/outputs/apk/release/app-release-unsigned.apk`는 서명 전 산출물이므로, 제출 APK는 저장소 밖 개인 키로 서명해 `apk/`에 둔 파일이다. 키와 암호는 저장소에 없다.
 - 시험 환경: Pleos Connect **v2.1.0** 시스템 이미지, Android Automotive API 34 x86_64, AVD `PleosOfficialProfile`, **2560×1440 / 160 dpi**. 앱은 API 35로 컴파일하고 Vehicle SDK 2.3.2를 사용했다.
 - 검증 범위: `assembleRelease`, release unit test 2건, APK v3 서명 검증, 새 설치와 실행, 정적 신호 읽기, 종료 후 0건 검토, 합성 예시 3건과 정정 1건은 **실행 확인**. 값 변화·실제 회전 후보·속도·기어·주행 제한·실차·백그라운드/자동 시작은 **미확인**. 실제 차량 데이터 정확도나 수요·효과는 주장하지 않는다.

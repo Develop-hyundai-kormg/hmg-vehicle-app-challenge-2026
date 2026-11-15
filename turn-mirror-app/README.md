@@ -11,7 +11,7 @@ cd turn-mirror-app
 .\gradlew.bat testReleaseUnitTest assembleRelease
 ```
 
-Gradle이 만드는 `app/build/outputs/apk/release/app-release-unsigned.apk`는 서명 전이다. [저장소에 둔 release APK](../apk/turn-mirror-prototype_release.apk)는 별도 개인 키로 서명하고 `apksigner verify --verbose`로 검증했다. `adb install -r ../apk/turn-mirror-prototype_release.apk` 후 `adb shell am start -n org.hmgchallenge.turnmirror/.MainActivity`로 연다.
+Gradle이 만드는 `app/build/outputs/apk/release/app-release-unsigned.apk`는 서명 전이다. [저장소에 둔 release APK](../apk/상명F4_회전습관거울_release.apk)는 별도 개인 키로 서명하고 `apksigner verify --verbose`로 검증했다. `adb install -r ../apk/상명F4_회전습관거울_release.apk` 후 `adb shell am start -n org.hmgchallenge.turnmirror/.MainActivity`로 연다.
 
 ## 작동 범위
 

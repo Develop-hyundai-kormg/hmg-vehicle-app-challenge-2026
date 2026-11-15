@@ -11,7 +11,7 @@
 | 앱 소스 | [`../turn-mirror-app/`](../turn-mirror-app/) · 샘플 앱 소스 복사 없음 |
 | Pleos Connect AVD | v2.1.0 (`ro.build.display.id`), `PleosOfficialProfile`, Android Automotive API 34 x86_64, 2560×1440 / 160 dpi |
 | 앱 빌드 | Windows JDK 17, Android Gradle Plugin 8.8.2, Gradle 8.10.2, compileSdk 35, Vehicle SDK 2.3.2 |
-| APK | [`../apk/turn-mirror-prototype_release.apk`](../apk/turn-mirror-prototype_release.apk) · SHA-256 `aa8dfae270653b17fd75d41156b1b568fbed89d2b9319c4e95c0971b3e491e0c` |
+| APK | [`../apk/상명F4_회전습관거울_release.apk`](../apk/상명F4_회전습관거울_release.apk) · SHA-256 `aa8dfae270653b17fd75d41156b1b568fbed89d2b9319c4e95c0971b3e491e0c` |
 | 서명 | 저장소 밖 임시 PKCS12 키. `apksigner verify --verbose`: `Verifies`, v3=true, signer=1. 키·암호는 커밋하지 않음 |
 
 Windows 임시 빌드 디렉터리의 Gradle/매니페스트/앱 코드/단위 테스트 9개 파일을 저장소 원본과 SHA-256으로 비교해 모두 일치함을 확인했다. 임시 디렉터리의 `local.properties`와 빌드 캐시는 저장소에 넣지 않았다.

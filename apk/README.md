@@ -1,8 +1,8 @@
-# 선택 제출용 APK 위치
+# 1차 개발 프로토타입 APK
 
-1차에 GitHub 개발 산출물을 제출하기로 **팀이 결정하고** 실행 가능한 release APK가 완성되면 이 폴더에 둔다. 지금은 APK가 없고 앱 코드도 시작하지 않았다.
+[`상명F4_회전습관거울_release.apk`](상명F4_회전습관거울_release.apk)는 2026-11-15에 빌드·서명하고 Pleos AVD에 새로 설치해 실행한 〈회전 습관 거울〉의 release APK다. SHA-256: `aa8dfae270653b17fd75d41156b1b568fbed89d2b9319c4e95c0971b3e491e0c`.
 
-[공식 제출 안내](https://appdevchallenge.auto-hmg.io/guide/submission)는 소스 코드와 APK를 **같은 GitHub 저장소**에 포함하고, APK 파일 경로와 실행 방법을 README에 적도록 안내한다. 심사용 비공개 저장소라면 공지된 심사 계정의 접근도 확인해야 한다.
+소스는 [`../turn-mirror-app/`](../turn-mirror-app/), 정확한 실행 범위와 재현 증거는 [`../docs/TURN_MIRROR_PROTOTYPE_2026-11-15.md`](../docs/TURN_MIRROR_PROTOTYPE_2026-11-15.md)에 있다. 실제 차량 신호의 **변화**와 그에 따른 후보 생성은 아직 확인하지 못했다. 예시 화면의 3건은 합성 입력이다.
 
-빌드 산출물을 올리기 전에는 설치·실행·버전·권한·개인정보 노출을 검토한다. 서명 키는 저장소에 올리지 않는다.
+팀명이 전달되면 [공식 제출 안내](https://appdevchallenge.auto-hmg.io/guide/submission)의 `팀명_앱이름_release.apk` 형식으로 바꾸고, **새 최종 커밋 해시**를 메일에 적는다. 서명 키와 암호는 저장소에 두지 않았다.
 

@@ -1,0 +1,8 @@
+--------- beginning of main
+11-15 02:42:39.297 10117 10117 I TurnMirrorProbe: 연결: Vehicle SDK 초기화 완료
+11-15 02:42:39.420 10117 10117 I TurnMirrorProbe: 방향지시등 구독: 요청됨 · 변화 수신 미검증
+11-15 02:42:39.420 10117 10117 I TurnMirrorProbe: 조향각 구독: 요청됨 · 변화 수신 미검증
+11-15 02:42:39.456 10117 10134 I TurnMirrorProbe: 조향각 capability: READ
+11-15 02:42:39.457 10117 10134 I TurnMirrorProbe: 방향지시등 현재값: 수신 성공
+11-15 02:42:39.457 10117 10135 I TurnMirrorProbe: 방향지시등 capability: READ
+11-15 02:42:39.462 10117 10135 I TurnMirrorProbe: 조향각 현재값: 수신 성공

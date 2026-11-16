@@ -2,7 +2,23 @@
 
 4인 팀의 아이디어 검증, Pleos 기술 확인, 1차 제출물 준비를 위한 작업 저장소입니다. 추가 팀원 초대와 역할 확인은 진행 예정입니다.
 
-> **현재 상태 · 2026-11-10:** [지금까지의 주제와 미선정 이유](docs/IDEA_HISTORY.md)를 모았다. 사용자가 〈다음 운전자〉, 픽업·주차 후보, 자동세차 준비안을 내렸고 간헐 고장 기록·말 콘텐츠 이어듣기는 재판단 후 주력 추천에서 철회했다. [3차 탐색](docs/IDEA_SCAN_ROUND3_2026-11-10.md)의 〈다시 큰길로〉는 주력 추천하지 않는다. [4차 재탐색](docs/IDEA_SCAN_ROUND4_2026-11-10.md)에서 사용자의 **목적지 없는 카메라 알림** 원안에 관련된 SDK 콜백을 확인했으나, [독립 재검증](docs/CAMERA_ALERT_INDEPENDENT_REVIEW_2026-11-10.md) 결과 **1차 단독 주력 추천은 철회**했다. 거리 자료형·자유 주행 상태는 SDK에 있으나 무목적지 이벤트·자동 대기·실제 중복 억제는 **실행 미확인**이고, RadarNav·순정 내비와의 남는 차별성도 입증하지 못했다. **출품 주제는 미확정**이다. 팀 자체 제품 앱 코드/APK, 실차·사용자 검증, 접수는 없다. 11월 9일의 [인계안](docs/FIRST_ROUND_DIRECTION_2026-11-09.md)과 [제출 문안](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md)은 당시 이력이다.
+> **현재 상태 · 2026-11-15 KST:** 사용자가 〈회전 습관 거울〉을 1차 주제로 선택했다. [자체 앱 소스](turn-mirror-app/)와 [서명된 release APK](apk/상명F4_회전습관거울_release.apk)를 준비했다. Pleos AVD에서 방향지시등·조향각의 capability READ와 정적 현재값 OFF/0.0, 관찰 시작·종료·결과 화면, 명확히 표시된 예시 재생·정정을 실행 확인했다. **차량값 변화 → 실제 후보 생성은 미확인**이다. Virtual Console의 두 값 변경 요청은 503 `emulator_inactive`였다. [재현 증거와 한계](docs/TURN_MIRROR_PROTOTYPE_2026-11-15.md)를 먼저 읽는다. 공식 접수·개인정보/서명 작성은 아직 팀의 별도 작업이다.
+
+## 〈회전 습관 거울〉 1차 개발 산출물
+
+앱은 사용자가 화면에서 관찰을 시작하면 Pleos Vehicle SDK 2.3.2로 방향지시등과 조향각을 읽고 구독한다. 조향각이 처음 45°를 넘는 순간을 **조향 변화 후보**로 남기고, 관찰을 종료한 뒤 후보를 `회전 아님`으로 정정할 수 있다. 이 기준은 초기 구현값이며 실제 도로 회전이나 안전·법규 준수를 판정하지 않는다. `예시 화면 보기`는 고정 합성 입력을 같은 검토 로직에 통과시키며 전 화면에 실제 운행이 아님을 표시한다. 세션은 메모리에만 있고 앱 화면을 벗어나면 관찰이 끝난다.
+
+- APK: [`apk/상명F4_회전습관거울_release.apk`](apk/상명F4_회전습관거울_release.apk), SHA-256 `aa8dfae270653b17fd75d41156b1b568fbed89d2b9319c4e95c0971b3e491e0c`. 작업 시점에 팀명을 전달받지 못해 공식 권장 파일명 `팀명_앱이름_release.apk`로 확정하지 않았다. 제출 전에 이름을 바꾸면 새 커밋 해시를 메일에 적는다.
+- 실행: Pleos AVD가 켜진 상태에서 저장소 루트의 `adb install -r apk/상명F4_회전습관거울_release.apk`, 이어 `adb shell am start -n org.hmgchallenge.turnmirror/.MainActivity`. 앱에서 `실제 관찰 시작`을 누른다.
+- 빌드: Windows JDK 17, Android SDK API 35와 Pleos Maven 접근이 있는 환경에서 `cd turn-mirror-app` 후 `gradlew.bat testReleaseUnitTest assembleRelease`. Gradle 8.10.2 wrapper가 포함된다. `app/build/outputs/apk/release/app-release-unsigned.apk`는 서명 전 산출물이므로, 제출 APK는 저장소 밖 개인 키로 서명해 `apk/`에 둔 파일이다. 키와 암호는 저장소에 없다.
+- 시험 환경: Pleos Connect **v2.1.0** 시스템 이미지, Android Automotive API 34 x86_64, AVD `PleosOfficialProfile`, **2560×1440 / 160 dpi**. 앱은 API 35로 컴파일하고 Vehicle SDK 2.3.2를 사용했다.
+- 검증 범위: `assembleRelease`, release unit test 2건, APK v3 서명 검증, 새 설치와 실행, 정적 신호 읽기, 종료 후 0건 검토, 합성 예시 3건과 정정 1건은 **실행 확인**. 값 변화·실제 회전 후보·속도·기어·주행 제한·실차·백그라운드/자동 시작은 **미확인**. 실제 차량 데이터 정확도나 수요·효과는 주장하지 않는다.
+
+현재 메일에 GitHub를 선택 첨부하려면 이 한계를 그대로 설명하고 저장소 주소와 **최종 커밋 해시**를 적어야 한다. [공식 제출 안내](https://appdevchallenge.auto-hmg.io/guide/submission)와 [추가 공지](https://appdevchallenge.auto-hmg.io/notice/c0a1a000-2026-4923-8000-000000000007)는 비공개 저장소를 11월 16일까지 공개해 11월 23일까지 유지하거나, 마감 전 소스+APK 압축본 다운로드 주소를 보내도록 안내한다. 저장소 공개와 이메일 발송은 팀이 결정한다. 확인일: **2026-11-15 KST**.
+
+> **아래 2026-11-10 상태와 후보 표는 당시 탐색 이력이다.** 현재 주제·앱 상태는 위 11월 15일 결과를 따른다.
+
+> **과거 상태 · 2026-11-10:** [지금까지의 주제와 미선정 이유](docs/IDEA_HISTORY.md)를 모았다. 사용자가 〈다음 운전자〉, 픽업·주차 후보, 자동세차 준비안을 내렸고 간헐 고장 기록·말 콘텐츠 이어듣기는 재판단 후 주력 추천에서 철회했다. [3차 탐색](docs/IDEA_SCAN_ROUND3_2026-11-10.md)의 〈다시 큰길로〉는 주력 추천하지 않는다. [4차 재탐색](docs/IDEA_SCAN_ROUND4_2026-11-10.md)에서 사용자의 **목적지 없는 카메라 알림** 원안에 관련된 SDK 콜백을 확인했으나, [독립 재검증](docs/CAMERA_ALERT_INDEPENDENT_REVIEW_2026-11-10.md) 결과 **1차 단독 주력 추천은 철회**했다. 거리 자료형·자유 주행 상태는 SDK에 있으나 무목적지 이벤트·자동 대기·실제 중복 억제는 **실행 미확인**이고, RadarNav·순정 내비와의 남는 차별성도 입증하지 못했다. **당시 출품 주제는 미확정**이었다. 11월 9일의 [인계안](docs/FIRST_ROUND_DIRECTION_2026-11-09.md)과 [제출 문안](docs/SUBMISSION_DRAFT_NEXT_DRIVER.md)은 당시 이력이다.
 
 ## 처음 합류했다면
 
@@ -11,14 +27,14 @@
 3. [제품 목표와 후보](docs/PRODUCT_VISION.md), [이전 방향 재판단](docs/DIRECTION_REASSESSMENT_2026-11-09.md)과 [독립 재검증](docs/INDEPENDENT_REVIEW_2026-11-09.md)으로 선정 이전 판단과 SDK 실행 결과를 확인합니다.
 4. [운전자 인터뷰 질문지](docs/DRIVER_INTERVIEW_2026-11-09.md)의 중립 질문으로 최근 실제 문제와 기존 해결법을 기록하고, SDK나 사용자 문제를 확인하면 [기술 검증표](docs/TECHNICAL_VALIDATION.md)의 기준으로 Issue에 증거를 기록합니다.
 
-로컬에서 문서나 코드를 작업할 때는 조직 권한이 있는 계정으로 저장소를 복제합니다. **현재 제품 앱 프로젝트는 없습니다.** `experiments/`는 차량 신호·기어·주행 UI 제한 진단용입니다.
+로컬에서 문서나 코드를 작업할 때는 조직 권한이 있는 계정으로 저장소를 복제합니다. 현재 앱 소스는 [`turn-mirror-app/`](turn-mirror-app/)에 있습니다. `experiments/`는 과거 차량 신호·기어·주행 UI 제한 진단용입니다.
 
 ```bash
 git clone https://github.com/Develop-hyundai-kormg/hmg-vehicle-app-challenge-2026.git
 cd hmg-vehicle-app-challenge-2026
 ```
 
-## 현재 판단 한눈에 보기
+## 11월 10일 후보 검토 이력
 
 | 후보 | 현재 상태 | 먼저 확인할 것 |
 |---|---|---|

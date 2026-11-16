@@ -1,0 +1,6 @@
+PleosOfficialProfile / Pleos Connect v2.1.0 / 2026-11-15 KST
+adb forward tcp:8088 tcp:8088
+GET  /vehicle/state -> HTTP 200; gear.bridge_ready=false; controls.emulator_active=false
+PUT  /vehicle/turn-signal?mode=BlinkRight -> HTTP 503 {"error":"emulator_inactive"}
+PUT  /vehicle/controls?speed=0&accelerator=0&brake=0&steering=60 -> HTTP 503 {"error":"emulator_inactive"}
+No vehicle value change was observed or claimed.
